@@ -1,0 +1,48 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+   <!--Meta block-->
+    {% block meta %}
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% endblock %}
+    <!--Extra Meta block-->
+    {% block extra_meta %}
+    {% endblock %}
+    <!--CSS block-->
+    {% block corecss %}
+
+    {% endblock %}
+    <!--Extra CSS block-->
+    {% block extra_css %}
+    {% endblock %}
+    <!--JS block-->
+    {% block corejs %}
+       
+    {% endblock %}
+    <!--Extra JS block-->
+    {% block extra_js %}
+    {% endblock %}
+
+    <title>Foot Galaxy {% block extra_title %}{% endblock %}</title>
+  </head>
+  <body>
+    <!--Messages popup block-->
+    {% if messages %}
+    {% endif %}
+    <!--Page header block-->
+    {% block page_header %}
+    {% endblock %}
+    <!--Main block content block-->
+    {% block content %}
+    {% endblock %}
+
+    {% block postloadjs %}
+    {% endblock %}
+
+    
+  </body>
+</html>
