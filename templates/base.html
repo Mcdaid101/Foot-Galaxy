@@ -1,5 +1,5 @@
 {% load static %}
-
+{% load tailwind_tags %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -12,13 +12,12 @@
     <!--Extra Meta block-->
     {% block extra_meta %}
     {% endblock %}
-    <!--CSS block-->
-    {% block corecss %}
+    
+    <!--Tailwind CSS -->
+    {% tailwind_css %}
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.2.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    {% endblock %}
-    <!--Extra CSS block-->
-    {% block extra_css %}
-    {% endblock %}
     <!--JS block-->
     {% block corejs %}
        
@@ -33,13 +32,11 @@
     <!--Messages popup block-->
     {% if messages %}
     {% endif %}
-    <!--Page header block-->
-    {% block page_header %}
-    {% endblock %}
     <!--Main block content block-->
     {% block content %}
     {% endblock %}
 
+    <!--Post load js block -->
     {% block postloadjs %}
     {% endblock %}
 
