@@ -13,7 +13,7 @@
     {% block extra_meta %}
     {% endblock %}
     
-    <!--Tailwind CSS -->
+    <!--Tailwind CSS + Daisy UI extension -->
     {% tailwind_css %}
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.2.1/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -28,7 +28,68 @@
 
     <title>Foot Galaxy {% block extra_title %}{% endblock %}</title>
   </head>
+
   <body>
+    <div class="drawer">
+      <input id="my-drawer-3" type="checkbox" class="drawer-toggle" /> 
+      <div class="drawer-content flex flex-col">
+        <!-- Navbar -->
+        <div class="w-full navbar bg-base-300">
+          <div class="flex-none lg:hidden">
+            <label for="my-drawer-3" class="btn btn-square btn-ghost">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </label>
+          </div> 
+          <div class="flex-1 px-2 mx-2">Navbar Title</div>
+          <div class="dropdown">
+            <label tabindex="0">
+              <div class="avatar placeholder pr-4">
+                <div class="bg-neutral-focus text-neutral-content rounded-full w-12">
+                  <span class="text-xl">JO</span>
+                </div>
+              </div> 
+            </label>
+            <ul tabindex="0" class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+              <li>
+                <a class="justify-between">Profile</a>
+              </li>
+              <li>
+                <a>Saved Items</a>
+              </li>
+              <li>
+                <a>My Plans</a>
+              </li>
+              <li>
+                <a>Logout</a>
+              </li>
+            </ul>
+          </div>
+          <div class="pr-4">
+            <a>Plans</a>
+          </div>
+          <div class="pr-4">
+            <a>Gear</a>
+          </div>
+          <div class="pr-4">
+            <a>About</a>
+          </div>
+          <div class="form-control">
+            <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
+          </div>
+        </div>
+        </div>
+      </div> 
+      <div class="drawer-side">
+        <label for="my-drawer-3" class="drawer-overlay"></label> 
+        <ul class="menu p-4 w-80 h-full bg-base-200">
+          <!-- Sidebar content here -->
+          <li><a>Sidebar Item 1</a></li>
+          <li><a>Sidebar Item 2</a></li>
+          
+        </ul>
+        
+      </div>
+    </div>
     <!--Messages popup block-->
     {% if messages %}
     {% endif %}
@@ -39,7 +100,5 @@
     <!--Post load js block -->
     {% block postloadjs %}
     {% endblock %}
-
-    
   </body>
 </html>
