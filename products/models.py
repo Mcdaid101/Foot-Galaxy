@@ -3,6 +3,9 @@ from django.db import models
 # Create your models here.
 
 class Category(models.Model):
+
+    class Meta:
+        verbose_name = 'Categories'
     name = models.CharField(max_length=250)
 
     def __str__(self):
