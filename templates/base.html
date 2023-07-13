@@ -18,6 +18,10 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.2.1/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     
+    <!--Django star rating plugin-->
+    <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+    <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
+
     {% block corecss %}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -74,7 +78,6 @@
         <div class="form-control">
           <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
         </div>
-        {% include 'includes/drawer.html' %}
       </div>
     </div>
 
