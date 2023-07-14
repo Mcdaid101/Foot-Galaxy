@@ -1,6 +1,30 @@
 {% extends "base.html" %}
 {% load static %}
+
 {% block content %}
-product page 
+<section>
+  <div class="hero min-h-screen">
+    <div class="container " style="padding-top: 5%;">
+    <div class="row">
+    {% for x in products %}
+    <div class="col-md-3">
+      <div class="card w-96 bg-base-100 shadow-xl">
+        <figure><img src="{{ x.image.url }}" alt="Shoes" /></figure>
+        <div class="card-body">
+          <h2 class="card-title">{{ x.name }}</h2>
+          <p>{{ x.desc }}</p>
+          <p>{{ x.price }}</p>
+          <div class="card-actions justify-end">
+            <button class="btn btn-primary">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  </section>
+
 {% include 'includes/footer.html' %}
 {% endblock %}

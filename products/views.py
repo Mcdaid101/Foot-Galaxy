@@ -3,7 +3,7 @@ from .models import Product
 
 
 # Create your views here.
-def all_products(requests):
+def all_products(request):
 
     products = Product.objects.all()
 
