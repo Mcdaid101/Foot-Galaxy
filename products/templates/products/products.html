@@ -2,8 +2,20 @@
 {% load static %}
 
 {% block content %}
-<div class="text-center">
-  <h1>Products</h1>
+<div class="navbar bg-base-100">
+  <div class="navbar-start">
+  </div>
+  <div class="navbar-center">
+    <div class="dropdown dropdown-hover">
+      <label tabindex="0" class="btn m-1">Hover</label>
+      <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+        <li><a href="{% url 'products' %}?category=Shirts">Shirts</a></li>
+        <li><a href="{% url 'products' %}?category=Shorts">Shorts</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="navbar-end">
+  </div>
 </div>
 <div class="mb-5 ml-4 mr-4">
 <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 xl:gap-x-8">
