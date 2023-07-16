@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, Category
+from .models import Product, Category, Brand, League
 
 
 # Register your models here.
@@ -8,6 +8,8 @@ class ProductAdmin(admin.ModelAdmin):
         'sku',
         'name',
         'category',
+        'brand',
+        'league',
         'price',
         'rating',
         'image',
@@ -22,5 +24,19 @@ class CategoryAdmin(admin.ModelAdmin):
     )
 
 
+class LeagueAdmin(admin.ModelAdmin):
+    list_display = (
+        'name',
+    )
+
+
+class BrandAdmin(admin.ModelAdmin):
+    list_display = (
+        'name',
+    )
+
+
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
+admin.site.register(Brand, BrandAdmin)
+admin.site.register(League, LeagueAdmin)

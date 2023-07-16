@@ -7,10 +7,24 @@
   </div>
   <div class="navbar-center">
     <div class="dropdown dropdown-hover">
-      <label tabindex="0" class="btn m-1">Hover</label>
+      <label tabindex="0" class="btn m-1">Clothing</label>
       <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
         <li><a href="{% url 'products' %}?category=Shirts">Shirts</a></li>
         <li><a href="{% url 'products' %}?category=Shorts">Shorts</a></li>
+      </ul>
+    </div>
+    <div class="dropdown dropdown-hover">
+      <label tabindex="0" class="btn m-1">Leagues</label>
+      <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+        <li><a href="{% url 'products' %}?league=England">England</a></li>
+        <li><a href="{% url 'products' %}?league=Spain">Spain</a></li>
+      </ul>
+    </div>
+    <div class="dropdown dropdown-hover">
+      <label tabindex="0" class="btn m-1">Brands</label>
+      <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+        <li><a href="{% url 'products' %}?brand=Nike">Nike</a></li>
+        <li><a href="{% url 'products' %}?brand=Adidas">Adidas</a></li>
       </ul>
     </div>
   </div>
