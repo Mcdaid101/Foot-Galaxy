@@ -17,7 +17,10 @@
     {% tailwind_css %}
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.2.1/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
+    <!--Flowbite -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
+
     <!--Django star rating plugin-->
     <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
     <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
@@ -42,7 +45,8 @@
   <body>
     <div class="navbar bg-slate-400 bg-base-100">
       <div class="navbar-start">
-        <a class="btn btn-ghost normal-case text-3xl text-white" style="font-family: 'Chela One', cursive;" href="{% url 'home' %}"><i class="fa-solid fa-futbol"></i> Foot Galaxy</a>
+        {% include 'includes/drawer.html' %}
+        <a class="btn btn-ghost normal-case text-3xl text-white ml-10" style="font-family: 'Chela One', cursive;" href="{% url 'home' %}"><i class="fa-solid fa-futbol"></i> Foot Galaxy</a>
       </div>
       <div class="navbar-end">
         <div class="dropdown dropdown-hover hidden lg:block">
@@ -81,16 +85,17 @@
           <label tabindex="0" class="btn m-1">Shop</label>
           <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
             <li><a href="{% url 'products' %}">Gear</a></li>
-            <li><a>Plans</a></li>
+            <li><a href="#">Plans</a></li>
           </ul>
         </div>
-        <div>
+        <div class="hidden lg:block">
           <form method="GET" action="{% url 'products' %}">
             <div class="input-group w-100">
                 <input class="input input-bordered w-full max-w-xs" class="form-control" type="text" name="q" placeholder="Search" type="submit">
             </div>
         </form>
         </div>
+    </div> 
       </div>
     </div>
 
@@ -103,6 +108,7 @@
 
     <!--Post load js block -->
     {% block postloadjs %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>
     {% endblock %}
   </body>
 </html>
