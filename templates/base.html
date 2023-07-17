@@ -29,6 +29,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chela+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
 
     <!--JS block-->
@@ -102,6 +103,7 @@
     <!--Messages popup block-->
     {% if messages %}
     {% endif %}
+    
     <!--Main block content block-->
     {% block content %}
     {% endblock %}
@@ -111,4 +113,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>
     {% endblock %}
   </body>
+  <script>
+   
+  </script>
 </html>
