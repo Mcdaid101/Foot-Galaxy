@@ -31,6 +31,15 @@ class League(models.Model):
         return self.name
 
 
+CLOTHING_SIZES = (
+    ("XS", "XS"),
+    ("S", "S"),
+    ("M", "M"),
+    ("L", "L"),
+    ("XL", "XL"),
+)
+
+
 class Product(models.Model):
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
     league = models.ForeignKey(League, null=True, blank=True, on_delete=models.SET_NULL, default='unknown')
@@ -42,6 +51,7 @@ class Product(models.Model):
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True, upload_to='media/products')
+    size = models.CharField(max_length=20, choices=CLOTHING_SIZES, default="M")
 
     def __str__(self):
         return self.name
