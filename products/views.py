@@ -13,16 +13,18 @@ def all_products(request):
     categories = None
     brands = None
     leagues = None
-    sort_by = request.GET.get('sort_by', 'name')  # Get the user's sorting choice from the query parameter 'sort_by'
+    sort_by = request.GET.get('sort_by', 'name')
 
     if sort_by == 'name':
         products = Product.objects.all().order_by('name')  # Sort alphabetically by name
+    elif sort_by == '-name':
+        products = Product.objects.all().order_by('-name')  # Sort by ascending price
     elif sort_by == 'price_asc':
         products = Product.objects.all().order_by('price')  # Sort by ascending price
     elif sort_by == 'price_desc':
         products = Product.objects.all().order_by('-price')  # Sort by descending price
     else:
-        products = Product.objects.all().order_by('name')  # Default: sort alphabetically by name
+        products = Product.objects.all().order_by('name')  # Default products home3 
 
     if request.GET:  
         if 'category' in request.GET:

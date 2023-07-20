@@ -29,14 +29,21 @@
     </div>
     <label for="sort">Sort by:</label>
     <select id="sort" name="sort_by">
-        <option value="name">Name (Alphabetically)</option>
-        <option value="price_asc">Price (Ascending)</option>
+       <option value="price_asc">Price (Ascending)</option>
         <option value="price_desc">Price (Descending)</option>
+        <option value="name">Name (A-Z)</option>
+        <option value="-name">Name (Z-A)</option>
     </select>
     <button id="sortButton">Sort</button>
 
   </div>
   <div class="navbar-end">
+  </div>
+</div>
+
+<div class="flex items-center justify-center w-full mt-8">
+  <div>
+   {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
   </div>
 </div>
 

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="flex flex-col md:flex-row space-x-4 sm:content-center">
+    <div class="md:w-[49%] ml-2">
+        {% if bag_items %}
+        <div>
+
+        </div>
+        {% else %}
+        <p class="text-center">Your bag is empty</p>
+        {% endif %}
+      </div>
+    </div>
+    <div class="md:w-[49%]">
+    </div>
+  </div>
+{% include 'includes/footer.html' %}
+{% endblock %}
+
