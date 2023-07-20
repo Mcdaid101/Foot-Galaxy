@@ -8,30 +8,23 @@ from django.db.models.functions import Lower
 
 # Create your views here.
 def all_products(request):
-
     products = Product.objects.all()
     query = None
     categories = None
     brands = None
     leagues = None
-    sort = None
-    direction = None
+    sort_by = request.GET.get('sort_by', 'name')  # Get the user's sorting choice from the query parameter 'sort_by'
 
-    if request.GET:
-        if 'sort' in request.GET:
-            sortkey = request.GET['sort']
-            sort = sortkey
-            if sortkey == 'name':
-                sortkey = 'lower_name'
-                products = products.annotate(lower_name=Lower('name'))
-            if sortkey == 'category':
-                sortkey = 'category__name'
-            if 'direction' in request.GET:
-                direction = request.GET['direction']
-                if direction == 'desc':
-                    sortkey = f'-{sortkey}'
-            products = products.order_by(sortkey)
-            
+    if sort_by == 'name':
+        products = Product.objects.all().order_by('name')  # Sort alphabetically by name
+    elif sort_by == 'price_asc':
+        products = Product.objects.all().order_by('price')  # Sort by ascending price
+    elif sort_by == 'price_desc':
+        products = Product.objects.all().order_by('-price')  # Sort by descending price
+    else:
+        products = Product.objects.all().order_by('name')  # Default: sort alphabetically by name
+
+    if request.GET:  
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
@@ -56,15 +49,12 @@ def all_products(request):
             queries = Q(name__icontains=query) | Q(desc__icontains=query)
             products = products.filter(queries)
 
-    current_sorting = f'{sort}_{direction}'
-
     context = {
         'products': products,
         'search_term': query,
         'current_categories': categories,
         'current_brands': brands,
         'current_leagues': leagues,
-        'current_sorting': current_sorting,
     }
 
     return render(request, 'products/products.html', context)
@@ -79,19 +69,3 @@ def product_detail(request, product_id):
     }
 
     return render(request, 'products/product_detail.html', context)
-
-
-def get(self, request, product_id):
-
-    product = get_object_or_404(Product, pk=product_id)
-
-    sort_by = request.GET.get("sort", "l2h")
-    if sort_by == "l2h":
-        products = product.products.order_by("price")
-    elif sort_by == "h2l":
-        products = product.products.order_by("-price")
-
-    product_list = products.objects.all()
-    return render(request, 'products/products.html', {"product": products, 'product_list': product_list,})
-
-    

@@ -27,16 +27,14 @@
         <li><a href="{% url 'products' %}?brand=Adidas">Adidas</a></li>
       </ul>
     </div>
-    <div class="form-control">
-      <div class="input-group">
-        <select class="select select-bordered">
-          <option disabled selected>Sort By</option>
-          <option><a href="?sort=l2h">Price: Low to High</a></option>
-          <option><a href="?sort=h2l">Price: High to Low</a></option>
-        </select>
-        <button class="btn">Go</button>
-      </div>
-    </div>
+    <label for="sort">Sort by:</label>
+    <select id="sort" name="sort_by">
+        <option value="name">Name (Alphabetically)</option>
+        <option value="price_asc">Price (Ascending)</option>
+        <option value="price_desc">Price (Descending)</option>
+    </select>
+    <button id="sortButton">Sort</button>
+
   </div>
   <div class="navbar-end">
   </div>
@@ -63,5 +61,11 @@
   {% endfor %}
 </div>
 </div>
+<script>
+  document.getElementById('sortButton').addEventListener('click', function() {
+      var sortValue = document.getElementById('sort').value;
+      window.location.href = "/products/?sort_by=" + sortValue;
+  });
+</script>
 {% include 'includes/footer.html' %}
 {% endblock %}
