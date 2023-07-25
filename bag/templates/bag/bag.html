@@ -4,13 +4,15 @@
 
 <div class="text-center m-6">Bag</div>
 {% if bag_items %}
-<div class="overflow-x-auto">
-  <table class="table table-auto">
+<div class="lg:flex lg:items-center lg:justify-center md:flex md:items-center md:justify-center">
+  <table class="table table-auto lg:w-[60%] md:w-[90%]">
     <!-- Table head -->
     <thead>
       <tr>
         <th>Product</th>
+        <th>Item</th>
         <th>Price</th>
+        <th>Size</th>
         <th>Quantity</th>
         <th>Subtotal</th>
       </tr>
@@ -24,12 +26,18 @@
             <!--Product image -->
             <div class="h-30 w-30">
               <img class="max-h-44 object-contain" src="{{ item.product.image.url }}" alt="Product in bag">
-              <div class="ml-10">{{ item.product.name }}</div>
             </div>
+        </td>
+        <td>
+          {{ item.product.name }}
         </td>
         <!-- Price -->
         <td>
-          {{ item.product.price }}
+          £{{ item.product.price }}
+        </td>
+        <!-- Size -->
+        <td>
+          {{ item.product.size }}
         </td>
         <!--Quantity-->
         <td>
@@ -37,10 +45,21 @@
         </td>
         <!-- Subtotal -->
         <td>
-          {{ item.product.price }}
+          £{{ item.product.price }}
         </td>
       </tr>
       {% endfor %}
+      <!--Grand total and delivery -->
+      <td colspan="5" class="pt-5 text-right">
+        <h6><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
+        <h6>+ Delivery: £{{ delivery|floatformat:2 }}</h6>
+        <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
+        {% if free_delivery_delta > 0 %}
+            <p class="mb-1 text-danger">
+                Free delivery if you spend <strong>£{{ free_delivery_delta }}</strong> more!
+            </p>
+        {% endif %}
+    </td>
     </tbody>
   </table>
 </div>
