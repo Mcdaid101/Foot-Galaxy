@@ -3,6 +3,14 @@
 {% block content %}
 
 <div class="text-center m-6">Bag</div>
+<!--Messages-->
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
 {% if bag_items %}
 <div class="lg:flex lg:items-center lg:justify-center md:flex md:items-center md:justify-center">
   <table class="table table-auto lg:w-[60%] md:w-[90%]">
@@ -47,6 +55,11 @@
         <td>
           £{{ item.product.price }}
         </td>
+        <td>
+          <label class="btn cursor-pointer">
+          <a class="pointer text-danger" id="remove_{{ item.item_id }}">Remove</a>
+          </label>
+        </td>
       </tr>
       {% endfor %}
       <!--Grand total and delivery -->
@@ -69,5 +82,30 @@
 </div>
 {% endif %}
 {% include 'includes/footer.html' %}
+{% endblock %}
+
+{% block postloadjs %}
+<script type="text/javascript">
+    $('.btt-link').click(function (e) {
+        window.scrollTo(0, 0)
+    })
+</script>
+
+<script type="text/javascript">
+    // Remove item and reload on click
+    $('.pointer').click(function (e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var url = `/bag/remove/${itemId}/`;
+        var data = {
+            'csrfmiddlewaretoken': csrfToken
+        };
+
+        $.post(url, data)
+            .done(function () {
+                location.reload();
+            })
+    })
+</script>
 {% endblock %}
 

@@ -25,3 +25,18 @@ def add_to_bag(request, item_id):
     messages.success(request, f'You added {product.name} to your bag')
     request.session['bag'] = bag
     return redirect(redirect_url)
+
+
+def remove_from_bag(request, item_id):
+    try:
+        product = get_object_or_404(Product, pk=item_id)
+        bag = request.session.get('bag', {})
+
+        bag.pop(item_id)
+        messages.success(request, f'You removed {product.name} from your bag')
+
+        request.session['bag'] = bag
+        return HttpResponse(status=200)
+    except Exception as e:
+        messages.error(request, f'There was an error in removing: {e}')
+        return HttpResponse(status=500)
