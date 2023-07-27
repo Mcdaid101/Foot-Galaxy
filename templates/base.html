@@ -9,6 +9,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% endblock %}
+
     <!--Extra Meta block-->
     {% block extra_meta %}
     {% endblock %}
@@ -18,9 +19,6 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.2.1/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!--Flowbite -->
-    
-
     <!--Django star rating plugin-->
     <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
     <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
@@ -29,20 +27,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chela+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
 
     <!--JS block-->
     {% block corejs %}
-    <script src="{% static 'script.js' %}"></script>
     <script src="https://kit.fontawesome.com/602c42d7e5.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     {% endblock %}
+
     <!--Extra JS block-->
     {% block extra_js %}
     {% endblock %}
+
     {% load ratings %}
+
     <title>Foot Galaxy {% block extra_title %}{% endblock %}</title>
   </head>
 
@@ -118,9 +117,9 @@
                    </svg>
                   </label>
                   <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                    <li class="text-center">Shop:</li>
+                    <p class="text-center">Shop</p>
                     <li><a href="{% url 'products' %}">Gear</a></li>
-                    <li><a>Plans</a></li>
+                    <li><a href="">Plans</a></li>
                   </ul>
                 </div>
               </a></li>
@@ -131,6 +130,13 @@
                     <svg class="flex-shrink-0 w-8 h-8 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
                       <path d="M17 5.923A1 1 0 0 0 16 5h-3V4a4 4 0 1 0-8 0v1H2a1 1 0 0 0-1 .923L.086 17.846A2 2 0 0 0 2.08 20h13.84a2 2 0 0 0 1.994-2.153L17 5.923ZM7 9a1 1 0 0 1-2 0V7h2v2Zm0-5a2 2 0 1 1 4 0v1H7V4Zm6 5a1 1 0 1 1-2 0V7h2v2Z"/>
                    </svg>
+                   <p class="my-0">
+                    {% if grand_total %}
+                        ${{ grand_total|floatformat:2 }}
+                    {% else %}
+                        $0.00
+                    {% endif %}
+                   </p>
                    </label>
                    <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
                   </ul>
@@ -241,8 +247,7 @@
             </a>
          </li>
          {% endif %}
-        </ul>
-        
+        </ul> 
       </div>
     </div>
 
@@ -252,11 +257,13 @@
     <ul class="messages">
     {% for message in messages %}
       {% with message.level as level %}
-        {% if level == 25 %}
-        {% include 'includes/messages/success.html' %}
-        {% elif level == 30 %}
+        {% if level == 40 %}
         {% include 'includes/messages/error.html' %}
-        {% elif level == 40 %}
+        {% elif level == 30 %}
+        {% include 'includes/messages/warning.html' %}
+        {% elif level == 25 %}
+        {% include 'includes/messages/success.html' %}
+        {% else %}
         {% include 'includes/messages/warning.html' %}
         {% endif %}
       {% endwith %}
