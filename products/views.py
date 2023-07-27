@@ -24,14 +24,14 @@ def all_products(request):
     elif sort_by == 'price_desc':
         products = Product.objects.all().order_by('-price')  # Sort by descending price
     else:
-        products = Product.objects.all().order_by('name')  # Default products home3 
+        products = Product.objects.all().order_by('name')  # Default products
 
     if request.GET:  
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
-        
+  
         if 'brand' in request.GET:
             brands = request.GET['brand'].split(',')
             products = products.filter(brand__name__in=brands)
