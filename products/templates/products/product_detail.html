@@ -3,17 +3,6 @@
 
 {% block content %}
 <!--Messages -->
-{% if messages %}
-<ul class="messages" id="fadeout">
-    {% for message in messages %}
-    <div class="toast toast-end toast-middle">
-      <div class="alert alert-success">
-        <li {% if message.tags %} class="{{ message.tags }} object-contain"{% endif %}>{{ message }}</li>
-      </div>
-    </div>
-    {% endfor %}
-</ul>
-{% endif %}
 <section class="text-gray-700 body-font overflow-hidden bg-white">
   <div class="container px-5 py-24 mx-auto">
     <div class="lg:w-4/5 mx-auto flex flex-wrap">

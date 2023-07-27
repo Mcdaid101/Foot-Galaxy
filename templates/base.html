@@ -247,7 +247,21 @@
     </div>
 
     <!--Messages popup block-->
+    <!--Messages-->
     {% if messages %}
+    <ul class="messages">
+    {% for message in messages %}
+      {% with message.level as level %}
+        {% if level == 25 %}
+        {% include 'includes/messages/success.html' %}
+        {% elif level == 30 %}
+        {% include 'includes/messages/error.html' %}
+        {% elif level == 40 %}
+        {% include 'includes/messages/warning.html' %}
+        {% endif %}
+      {% endwith %}
+    {% endfor %}
+    </ul>
     {% endif %}
     
     <!--Main block content block-->

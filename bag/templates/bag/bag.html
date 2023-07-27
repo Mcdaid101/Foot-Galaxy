@@ -3,18 +3,7 @@
 {% block content %}
 
 <div class="text-center m-6">Bag</div>
-<!--Messages-->
-{% if messages %}
-<ul class="messages" id="fadeout">
-    {% for message in messages %}
-    <div class="toast toast-end toast-middle">
-      <div class="alert alert-warning">
-        <li {% if message.tags %} class="{{ message.tags }} object-contain"{% endif %}>{{ message }}</li>
-      </div>
-    </div>
-    {% endfor %}
-</ul>
-{% endif %}
+
 {% if bag_items %}
 <div class="lg:flex lg:items-center lg:justify-center md:flex md:items-center md:justify-center">
   <table class="table table-auto lg:w-[60%] md:w-[90%]">
