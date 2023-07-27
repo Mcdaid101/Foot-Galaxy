@@ -5,9 +5,13 @@
 <div class="text-center m-6">Bag</div>
 <!--Messages-->
 {% if messages %}
-<ul class="messages">
+<ul class="messages" id="fadeout">
     {% for message in messages %}
-    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    <div class="toast toast-end toast-middle">
+      <div class="alert alert-warning">
+        <li {% if message.tags %} class="{{ message.tags }} object-contain"{% endif %}>{{ message }}</li>
+      </div>
+    </div>
     {% endfor %}
 </ul>
 {% endif %}
@@ -63,7 +67,7 @@
       </tr>
       {% endfor %}
       <!--Grand total and delivery -->
-      <td colspan="5" class="pt-5 text-right">
+      <td colspan="5" class="text-right pt-5">
         <h6><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
         <h6>+ Delivery: £{{ delivery|floatformat:2 }}</h6>
         <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
@@ -82,15 +86,10 @@
 </div>
 {% endif %}
 {% include 'includes/footer.html' %}
+{% include 'includes/timeout_function.html' %}
 {% endblock %}
 
 {% block postloadjs %}
-<script type="text/javascript">
-    $('.btt-link').click(function (e) {
-        window.scrollTo(0, 0)
-    })
-</script>
-
 <script type="text/javascript">
     // Remove item and reload on click
     $('.pointer').click(function (e) {
