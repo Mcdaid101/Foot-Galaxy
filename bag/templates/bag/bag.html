@@ -6,7 +6,7 @@
 
 {% if bag_items %}
 <div class="lg:flex lg:items-center lg:justify-center md:flex md:items-center md:justify-center">
-  <table class="table table-auto lg:w-[60%] md:w-[90%]">
+  <table class="table table-auto lg:w-[60%] md:w-[90%] sm:w-screen overflow-hidden">
     <!-- Table head -->
     <thead>
       <tr>
@@ -14,7 +14,7 @@
         <th>Item</th>
         <th>Price</th>
         <th>Size</th>
-        <th>Quantity</th>
+        <th>Qty</th>
         <th>Subtotal</th>
       </tr>
     </thead>
@@ -55,19 +55,34 @@
         </td>
       </tr>
       {% endfor %}
-      <!--Grand total and delivery -->
-      <td colspan="5" class="text-right pt-5">
-        <h6><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
-        <h6>+ Delivery: £{{ delivery|floatformat:2 }}</h6>
-        <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
-        {% if free_delivery_delta > 0 %}
-            <p class="mb-1 text-danger">
-                Free delivery if you spend <strong>£{{ free_delivery_delta }}</strong> more!
-            </p>
-        {% endif %}
-    </td>
     </tbody>
   </table>
+</div>
+<div class="flex items-center justify-center w-screen mt-8">
+  <div>
+    <h6><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
+    <h6>+ Delivery: £{{ delivery|floatformat:2 }}</h6>
+    <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
+    {% if free_delivery_delta > 0 %}
+        <p class="mb-1 text-danger">
+            Free delivery if you spend <strong>£{{ free_delivery_delta }}</strong> more!
+        </p>
+    {% endif %}
+  </div>
+  </div>
+  <div class="flex items-center justify-center w-screen mt-8 space-x-4">
+  <a href="{% url 'products' %}" class="btn">
+    <span class="icon">
+        <i class="fas fa-chevron-left"></i>
+    </span>
+    <span class="text-uppercase">Keep Shopping</span>
+</a>
+<a href="{% url 'checkout' %}" class="btn">
+    <span class="text-uppercase">Secure Checkout</span>
+    <span class="icon">
+        <i class="fas fa-lock"></i>
+    </span>
+</a>
 </div>
 {% else %}
 <div>

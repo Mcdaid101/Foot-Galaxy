@@ -51,7 +51,15 @@ INSTALLED_APPS = [
     'bag',
     'info',
     'checkout',
+    # Other
+    'crispy_forms',
+    'crispy_tailwind',
 ]
+
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
+
+CRISPY_TEMPLATE_PACK = "tailwind"
 
 TAILWIND_APP_NAME = 'theme'
 
@@ -86,8 +94,13 @@ TEMPLATES = [
                 'django.template.context_processors.request',  # required by allauth
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
                 'bag.contexts.bag_contents',
             ],
+            'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
+            ]
         },
     },
 ]

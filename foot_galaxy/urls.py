@@ -25,6 +25,7 @@ urlpatterns = [
     path('products/', include('products.urls')),
     path('bag/', include('bag.urls')),
     path('info/', include('info.urls')),
+    path('checkout/', include('checkout.urls')),
     path("__reload__/", include("django_browser_reload.urls")),
     path('ratings/', include('star_ratings.urls', namespace='ratings')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
