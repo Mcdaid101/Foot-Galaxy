@@ -1,4 +1,6 @@
 asgiref==3.7.2
+crispy-bootstrap4==2022.1
+crispy-tailwind==0.5.0
 Django==3.2.20
 django-allauth==0.41.0
 django-braces==1.15.0
