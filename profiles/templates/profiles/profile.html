@@ -2,16 +2,33 @@
 {% load static %}
 {% block content %}
 
-{% if user.is_authenticated %}
+
     <div class="text-center"></div>
         <h1 class="capitalize">'s' Dashboard </h1>
     </div>
-    {% else %}
-    <label class="form-check-label" for="id-save-info">
-        <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or 
-        <a class="text-info" href="{% url 'account_login' %}">login</a> to view your own Dashboard
-    </label>
-{% endif %}
+    
+    <div class="flex flex-col md:flex-col lg:flex-row lg:space-x-4">
+        <!--Order history -->
+        <div class="md:w-[50%] sm:mb-5">
+          <div class="card h-full">
+            <div class="card-body">
+                {{ orders }}
+            </div>
+          </div>
+        </div>
+
+        <!--Form-->
+        <div class="md:w-[50%]">
+          <div class="card h-full">
+            <div class="card-body">
+            <h2 class="card-title mb-4">Update Info</h2>
+            <!--Form body-->
+               
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
     
     {% include 'includes/footer.html' %}
 {% endblock %}
