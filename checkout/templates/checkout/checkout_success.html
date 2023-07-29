@@ -1,42 +1,105 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block extra_css %}
-    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
-{% endblock %}
-
-{% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
-{% endblock %}
-
 {% block content %}
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <hr>
-                <h2 class="logo-font mb-4">Thank You</h2>
-                <hr>
-                <p class="text-black">Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="col-12 col-lg-7"></div>
+<div class="flex flex-col space-x-4 items-center justify-center">
+  <div class="mt-5 mb-5 text-center">
+    <h1 class="text-center text-5xl">Thank you <i class="fa-regular fa-face-smile text-yellow-400"></i> !</h1>
+    <h2 class="text-xl">Your order has been successfully processed</h2>
+    <h2 class="text-center text-xl">Order Number: <strong>{{ order.order_number }}</strong></h2>
+   </div>
+    <div class="md:w-[60%] ml-2 space-y-4">
+      <div class="card glass">
+        <figure class="object-cover"><img class="md:h-[500px] w-full object-cover" src="{% static 'images/footballnet.jpg' %}" alt="car!"/></figure>
+        <div class="card-body">
+          <h1 class="card-title">Order Details</h1>
+          <!--Order details-->
+          <div class="overflow-x-auto">
+            <table class="table">
+             <thead>
+                <th></th>
+                <th></th>
+                <th>Size</th>
+                <th>Qty</th>
+                <th>Price</th>
+             </thead>
+              <tbody>
+                <!--Order items -->
+                {% for item in order.lineitems.all %}
+                <tr>
+                  <th>Item</th>
+                  <td>{{ item.product.name }}</td>
+                  <td>{{ item.product.size }}</td>
+                  <td>{{ item.quantity }}</td>
+                  <td>£{{ item.product.price }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+          <div class="border-t-2 h-1 w-full mt-16"></div>
+          <!--Delivery -->
+          <h1 class="card-title mt-6">Delivery</h1>
+          <div class="overflow-x-auto">
+            <table class="table">
+                <thead>
+                 <th>Delivering to: </th>
+                 <th>Billing Info: </th>
+                </thead>
+              <tbody>
+                <tr>
+                  <th>{{ order.full_name }}</th>
+                  <th> Order total: £{{ order.order_total }}</th>
+                </tr>
+                <tr>
+                    <th>{{ order.street_address1 }}</th>
+                    <th>Delivery fee: £{{ order.delivery_cost }}</th>
+                  </tr>
+                  <tr>
+                    {% if order.street_address2 %}
+                    <th>{{ order.street_address1 }} </th>
+                    {% endif %}
+                  </tr>
+                  <tr>
+                    {% if order.county %}
+                    <th>{{ order.county }} </th>
+                    {% endif %}
+                  </tr>
+                  <tr>
+                    <th>{{ order.town_or_city }}</th>
+                  </tr>
+                  <tr>
+                    {% if order.postcode %}
+                    <th>{{ order.postcode }} </th>
+                    {% endif %}
+                  </tr>
+                  <tr>
+                    <th>{{ order.country }}</th>
+                  </tr>
+                  <tr>
+                    <th>{{ order.phone_number }}</th>
+                    <th>Grand total: £{{ order.grand_total }}</th>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!--keep shopping button-->
+          <div class="card-actions justify-end">
+            <a href="{% url 'products' %}" class="btn">
+                <span>
+                    <i class="fas fa-gifts"></i>
+                </span>
+                <span class="text-uppercase">Now check out the latest deals!</span>
+            </a>        
+          </div>
         </div>
-        <div class="row">
-			<div class="col-12 col-lg-7 text-right">
-				<a href="{% url 'products' %}" class="btn btn-black rounded-0 my-2">
-					<span class="icon mr-2">
-						<i class="fas fa-gifts"></i>
-					</span>
-					<span class="text-uppercase">Now check out the latest deals!</span>
-				</a>
-			</div>
-		</div>
+      </div>
     </div>
+  </div>
+
+        
+
+{% include 'includes/footer.html' %}
 {% endblock %}

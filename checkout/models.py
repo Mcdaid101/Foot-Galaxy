@@ -21,7 +21,7 @@ class Order(models.Model):
     order_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, default=0)
     grand_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, default=0)
 
-    def generate_order_number(self):
+    def _generate_order_number(self):
         """
         generates a random order number using uuid
         """
