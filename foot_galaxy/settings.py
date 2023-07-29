@@ -43,17 +43,19 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'home',
-    'tailwind',
-    'theme',
-    'django_browser_reload',
     'products',
-    'star_ratings',
     'bag',
     'info',
     'checkout',
+    'profiles',
+    
     # Other
     'crispy_forms',
     'crispy_tailwind',
+    'star_ratings',
+    'tailwind',
+    'theme',
+    'django_browser_reload',
 ]
 
 
