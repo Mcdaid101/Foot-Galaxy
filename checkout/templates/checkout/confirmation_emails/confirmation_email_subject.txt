@@ -1,0 +1,1 @@
+Foot Galaxy confirmation email for Order Number {{ order.order_number }}.

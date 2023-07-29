@@ -1,0 +1,35 @@
+Hi {{ order.full_name }}, 
+
+Thank you for shopping with us at Foot Galaxy. We are excited to confirm your recent purchase. 
+
+Your order has been successfully placed, and we are now processing it with utmost care and attention to detail.
+
+Order Number: {{ order.order_number }}
+Order Date: {{ order.date }}
+Delivery: {{ order.delivery_cost }}
+
+Order Total: {{ order.grand_total }}
+
+Your order will be shipped to: {{ order.street_address1 }} in {{ order.town_or_city }}, {{ order.country }}.
+Shipping Method: [Shipping Method]
+Estimated Delivery Date: 3-5 business days. 
+
+If you have any questions or need further assistance regarding your order, feel free to contact our customer support team at support@footgalaxy.com 
+or call us at +44 673 7563 223. Our dedicated and knowledgeable team is always ready to help you.
+
+We greatly value your business and are committed to providing you with an exceptional shopping experience. Your satisfaction is our top priority.
+
+Thank you for choosing Foot Galaxy. We look forward to seeing you again soon!
+
+Best regards,
+
+Customer Service Team
+Foot Galaxy
+www.FootGalaxy.com
+support@footgalaxy.com
++44 673 7563 223
+
+
+
+
+
