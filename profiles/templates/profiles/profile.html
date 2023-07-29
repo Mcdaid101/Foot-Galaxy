@@ -2,12 +2,18 @@
 {% load static %}
 {% block content %}
 
-    <div class="text-center">
-        <h1>Profile Dashboard </h1>
+{% if user.is_authenticated %}
+    <div class="text-center"></div>
+        <h1 class="capitalize">'s' Dashboard </h1>
     </div>
-
+    {% else %}
+    <label class="form-check-label" for="id-save-info">
+        <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or 
+        <a class="text-info" href="{% url 'account_login' %}">login</a> to view your own Dashboard
+    </label>
+{% endif %}
     
-       
+    {% include 'includes/footer.html' %}
 {% endblock %}
 
 

@@ -46,7 +46,7 @@
             <h2>{% trans "Add E-mail Address" %}</h2>
             <form method="post" action="{% url 'account_email' %}" class="add_email">
                 {% csrf_token %}
-                {{ form.as_p }}
+                {{ form|crispy }}
                 <button class="rounded-md bg-red-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" name="action_add" type="submit">{% trans "Add E-mail" %}</button>
             </form>
       </div>
