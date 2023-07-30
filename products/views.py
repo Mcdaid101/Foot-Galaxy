@@ -5,6 +5,7 @@ from .models import Product, Category, Brand, League
 from django.urls import reverse
 from django.db.models.functions import Lower
 from .forms import ProductForm
+from django.contrib.auth.decorators import user_passes_test
 
 
 # Create your views here.
@@ -74,6 +75,7 @@ def product_detail(request, product_id):
     return render(request, 'products/product_detail.html', context)
 
 
+@user_passes_test(lambda u: u.is_superuser)
 def add_product(request):
     """ Add a product to the store """
     if request.method == 'POST':
@@ -95,6 +97,7 @@ def add_product(request):
     return render(request, template, context)
 
 
+@user_passes_test(lambda u: u.is_superuser)
 def edit_product(request, product_id):
     """
     edit product
@@ -120,6 +123,7 @@ def edit_product(request, product_id):
     return render(request, template, context)
 
 
+@user_passes_test(lambda u: u.is_superuser)
 def delete_product(request, product_id):
     """
     delete a product
