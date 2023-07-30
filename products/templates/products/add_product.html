@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <div class="flex items-center justify-center w-full mt-8">
+        <!--Order details -->
+        <div class="md:w-[50%] sm:mb-5">
+          <div class="card h-full">
+            <div class="card-body">
+                <h2 class="card-title mb-8">Add a Product</h2>
+                <form method="POST" action="{% url 'add_product' %}" class="form" enctype="multipart/form-data">
+                    {% csrf_token %}
+               {{ form | crispy }}
+
+               <label class="btn"><a href="{% url 'products' %}">cancel </a></label>
+               <button class="btn" type="submit">Add product</button>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div> 
+{% endblock %}
+
+

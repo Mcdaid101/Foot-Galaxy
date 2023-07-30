@@ -87,6 +87,11 @@
                     <li>
                       <a class="justify-between" href="{% url 'profile' %}">Profile</a>
                     </li>
+                    {% if request.user.is_authenticated %}
+                    <li>
+                      <a href="{% url 'add_product' %}">Add a product</a>
+                    </li>
+                    {% endif %}
                     <li>
                       <a href="#">Saved Items</a>
                     </li>
