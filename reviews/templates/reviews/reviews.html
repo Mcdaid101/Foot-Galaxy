@@ -1,36 +1,78 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block content %}
-
-<div class="flex flex-col space-x-4 items-center justify-center mr-4">
-  <div class="mt-5 mb-5 text-center">
-    <h1 class="text-center sm:text-lg lg:text-5xl">Thank you <i class="fa-regular fa-face-smile text-yellow-400"></i> !</h1>
-    <h2 class=" sm:text-lg lg:text-xl">Your order has been successfully processed</h2>
-    <h2 class="sm:text-lg lg:text-center text-xl">Order Number: <strong>{{ order.order_number }}</strong></h2>
-   </div>
-    <div class="md:w-[60%]">
-      <div class="card glass">
-        <form method="POST" action="" class="form" enctype="multipart/form-data">
-            {% csrf_token %}
-           {{ form | crispy }}
-       <button class="btn" type="submit">Submit review</button>
-        </form>
-      </div>
-    </div>
-    <div class="md:w-[60%]">
-        <div class="card glass">
-          {% for review in reviews %}
-          <p>{{ review.name }}</p>
-          <p>{{ review.stars }}</p>
-          <p>{{ review.content }}</p>
-          <p>{{ review.created_on }}</p>
-          {% endfor %}
-        </div>
-      </div>
+<div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
+    <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#a12056] to-[#f30000] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
   </div>
+<div class="mt-5 mb-5 text-center">
+    <h1 class="text-center sm:text-lg lg:text-5xl">Reviews</h1>
+    <h2 class=" sm:text-lg lg:text-xl">Check out our Customers experiences</h2>
+    <h2 class="sm:text-lg lg:text-center text-xl">And why not leave a little message of your own! </strong></h2>
+   </div>
 
-        
+    <div class="flex flex-col md:flex-col lg:flex-row lg:space-x-4 sm:space-x-8">
+        <!--Order details -->
+        <div class="md:w-[50%] sm:mb-5 border rounded-3xl">
+          <div class="card h-full">
+            <div class="card-body">
+                <h2 class="card-title">Review</h2>
+                <div class="card ">
+                    <form method="POST" action="" class="form" enctype="multipart/form-data">
+                        {% csrf_token %}
+                       {{ form | crispy }}
+                   <button class="btn" type="submit">Submit review</button>
+                    </form>
+                  </div>
+            </div>
+          </div>
+        </div>
 
-{% include 'includes/footer.html' %}
+        <!--Reviews -->
+        <div class="md:w-[50%] border rounded-3xl">
+          <div class="card h-full">
+            <div class="card-body">
+            <h2 class="card-title mb-4"></h2>
+            <!--Reviews body-->
+            {% for review in reviews %}
+            <div class="chat chat-start">
+                <div class="chat-image avatar">
+                  <div class="w-10 rounded-full">
+                    <span class="text-xl"><i class="fa-regular fa-user"></i></span>
+                  </div>
+                </div>
+                <div class="chat-header">
+                  {{ review.name }}
+                  <time class="text-xs opacity-50">{{ review.created_on }}</time>
+                </div>
+                <div class="chat-bubble">{{ review.content }}</div>
+                <div class="chat-footer opacity-50">
+                  {{ review.stars }} / <i class="fa-regular fa-star"></i>
+                </div>
+              </div>
+              <div class="chat chat-end">
+                <div class="chat-image avatar">
+                  <div class="w-10 rounded-full">
+                    <span class="text-xl"><i class="fa-regular fa-user"></i></span>
+                  </div>
+                </div>
+                <div class="chat-header">
+                  Foot Galaxy
+                  <time class="text-xs opacity-50">12:46</time>
+                </div>
+                <div class="chat-bubble">Thanks for the Feedback!</div>
+                <div class="chat-footer opacity-50">
+                  Seen at 12:46
+                </div>
+              </div>
+             {% endfor %}
+         </div>
+        </div>
+        </div>
+    </div>
+    <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]" aria-hidden="true">
+        <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff0000] to-[#a00030] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+      </div>
+    {% include 'includes/footer.html' %}
 {% endblock %}
+
+
