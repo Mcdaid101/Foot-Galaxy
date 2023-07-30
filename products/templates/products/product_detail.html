@@ -14,10 +14,13 @@
           <span class="flex items-center">
             <span class="text-gray-600 ml-3">4 Reviews</span>
           </span>
-          <span class="flex ml-3 pl-3 py-2 border-l-2 border-gray-200">
+          <span class="flex ml-3 pl-3 py-2 border-l-2 border-gray-200 space-x-2">
             {% if request.user.is_authenticated %}
-            <label class="btn">
+            <label class="btn bg-accent-focus">
               <a href="{% url 'edit_product' product.id %}">Edit product</a>
+            </label>
+            <label class="btn bg-warning">
+              <a href="{% url 'delete_product' product.id %}">Delete product</a>
             </label>
             {% endif %}
           </span>
