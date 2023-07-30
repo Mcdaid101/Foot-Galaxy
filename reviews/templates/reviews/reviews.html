@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="flex flex-col space-x-4 items-center justify-center mr-4">
+  <div class="mt-5 mb-5 text-center">
+    <h1 class="text-center sm:text-lg lg:text-5xl">Thank you <i class="fa-regular fa-face-smile text-yellow-400"></i> !</h1>
+    <h2 class=" sm:text-lg lg:text-xl">Your order has been successfully processed</h2>
+    <h2 class="sm:text-lg lg:text-center text-xl">Order Number: <strong>{{ order.order_number }}</strong></h2>
+   </div>
+    <div class="md:w-[60%]">
+      <div class="card glass">
+        <form method="POST" action="" class="form" enctype="multipart/form-data">
+            {% csrf_token %}
+           {{ form | crispy }}
+       <button class="btn" type="submit">Submit review</button>
+        </form>
+      </div>
+    </div>
+    <div class="md:w-[60%]">
+        <div class="card glass">
+          {% for review in reviews %}
+          <p>{{ review.name }}</p>
+          <p>{{ review.stars }}</p>
+          <p>{{ review.content }}</p>
+          <p>{{ review.created_on }}</p>
+          {% endfor %}
+        </div>
+      </div>
+  </div>
+
+        
+
+{% include 'includes/footer.html' %}
+{% endblock %}
