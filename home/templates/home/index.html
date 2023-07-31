@@ -6,17 +6,16 @@
     <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#a12056] to-[#f30000] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
   </div>
   <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-    <div class="hidden sm:mb-8 sm:flex sm:justify-center">
-      <div class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-        Anim aute id magna aliqua ad ad non deserunt sunt. <a href="#" class="font-semibold text-indigo-600"><span class="absolute inset-0" aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span></a>
-      </div>
+    <div class="hidden sm:mb-8 sm:flex sm:justify-center"><div class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+      Voted Britain and Ireland's best Football jersey website 2023 <i class="fa-solid fa-award text-yellow-400 mr-2 ml-1"></i><a href="#" class="font-semibold text-indigo-600"><span class="absolute inset-0" aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span></a>
+    </div>
     </div>
     <div class="text-center">
-      <h1 class='text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl'>The Football Training site you've been looking for</h1>
-      <p class="mt-6 text-lg leading-8 text-gray-600">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
+      <h1 class='text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl'>The Classic Jersey site you've been looking for.</h1>
+      <p class="mt-6 text-lg leading-8 text-gray-600">Step into the Soccer Universe: Discover our Elite Jersey Collection</p>
       <div class="mt-10 flex items-center justify-center gap-x-6">
-        <a href="#" class="rounded-md bg-red-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get started</a>
-        <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Learn more <span aria-hidden="true">→</span></a>
+        <a href="{% url 'products' %}" class="rounded-md bg-red-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">Get started</a>
+        <a href="{% url 'about' %}" class="text-sm font-semibold leading-6 text-gray-900">Learn more <span aria-hidden="true">→</span></a>
       </div>
     </div>
   </div>
@@ -32,9 +31,9 @@
       <figure><img src="{% static 'images/shirts-card.jpg' %}" alt="car!"/></figure>
       <div class="card-body">
         <h2 class="card-title">Shirts <i class="fa-solid fa-shirt animate-bounce"></i></h2> 
-        <p>How to park your car at your garage?</p>
+        <p>From all the classics, to this season's newest additions we're guaranteed to have them.</p>
         <div class="card-actions justify-end">
-          <button class="btn btn-primary">Learn now!</button>
+          <button class="btn btn-primary bg-black  text-white border-white  hover:bg-red-600 hover:text-white">Browse</button>
         </div>
       </div>
     </div>
@@ -43,22 +42,23 @@
     <div class="card glass h-[550px] mr-2">
       <figure><img src="{% static 'images/training-plans-card.jpg' %}" alt="car!"/></figure>
       <div class="card-body">
-        <h2 class="card-title">Plans</h2>
-        <p>How to park your car at your garage?</p>
+        <h2 class="card-title">Social <i class="fa-regular fa-futbol animate-spin"></i></h2>
+        <p>Sign up to our Weekly 5 a side tournaments</p>
+        <p>Register at the link below or at one of our <a class="text-red-600 underline" href="{% url 'about' %}">Stores</a></p>
         <div class="card-actions justify-end">
-          <button class="btn btn-primary">Learn now!</button>
+          <button class="btn btn-primary bg-red-600 border-white  hover:bg-black">Sign up</button>
         </div>
       </div>
     </div>
   </div>
   <div class="md:w-[33%] space-y-5">
     <div class="card glass h-[550px] mr-2">
-      <figure><img src="{% static 'images/soccer-gear-card.jpeg' %}" alt="car!"/></figure>
+      <figure><img src="{% static 'images/review.jpg' %}" alt="car!"/></figure>
       <div class="card-body">
-        <h2 class="card-title">Gear</h2>
-        <p>How to park your car at your garage?</p>
+        <h2 class="card-title">Reviews <i class="fa-solid fa-truck-fast animate-bounce ml-2 text-base"></i></h2>
+        <p>Love our jerseys and service? Then why not tell everyone about us and give us a review.</p>
         <div class="card-actions justify-end">
-          <button class="btn btn-primary">Learn now!</button>
+          <button class="btn btn-primary  bg-black  text-white border-white hover:bg-red-600"><a href="{% url 'reviews' %}">Review</a></button>
         </div>
       </div>
     </div>
