@@ -136,12 +136,43 @@ def delete_product(request, product_id):
 
 @login_required
 def save_product(request, product_id):
+    """
+    save a product
+    """
     product = get_object_or_404(Product, id=product_id)
     user = request.user
 
-    # Check if the user has already saved the item
     if not SavedProducts.objects.filter(user=user, product=product).exists():
         SavedProducts.objects.create(user=user, product=product)
+        messages.success(request, "You saved this product to your wishlist")
 
     return redirect('product_detail', product_id=product_id)
 
+
+@login_required
+def saved_products(request):
+    """
+    view to display the users saved products
+    """
+    user = request.user
+    saved_products = SavedProducts.objects.filter(user=user)
+
+    context = {
+        'saved_products': saved_products
+    }
+
+    return render(request, 'products/save_product.html', context)
+
+
+@login_required
+def delete_saved_product(request, saved_product_id):
+    """
+    delete an item from your Saved products
+    """
+    saved_product = get_object_or_404(SavedProducts, id=saved_product_id)
+    
+    if request.user == saved_product.user:
+        saved_product.delete()
+
+    messages.warning(request, 'This product has been removed from your Saved Items')
+    return redirect(reverse('saved_products'))

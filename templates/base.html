@@ -98,7 +98,7 @@
                     {% endif %}
                     {% if request.user.is_authenticated %}
                     <li>
-                      <a href="">Saved Items</a>
+                      <a href="{% url 'saved_products' %}">Saved Items</a>
                     </li>
                     {% endif %}
                     {% if user.is_authenticated %}

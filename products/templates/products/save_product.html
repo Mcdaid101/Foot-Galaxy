@@ -2,14 +2,41 @@
 {% load static %}
 
 {% block content %}
+<h1 class="text-center text-lg font">Saved Items</h1>
+<div class="flex items-center justify-center w-full mt-8">
+    <div>
+     {{ saved_products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+    </div>
+  </div>
 
-<div class="mb-5 ml-4 mr-4">
-<div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 xl:gap-x-8">
-  {% for product in SavedProducts %}
-  <p>{{ product.product }}</p>
-  <p>{{ product.user }}</p>
-  {% endfor %}
-</div>
-</div>
+  {% if saved_products %}
+
+
+  <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 xl:gap-x-8">
+    {% for product in saved_products %}
+    {% if product.product.image %}
+    <a href="{% url 'product_detail' product.product.id %}" class="group m-4">
+      <div class="aspect-h-1 aspect-w-1 h-full w-full overflow-hidden rounded-lg bg-inherit xl:aspect-h-8 xl:aspect-w-7">
+        <img src="{{ product.product.image.url }}" alt="Football Jersey" class="h-full w-full object-contain object-center group-hover:opacity-75">
+      </div>
+      {% else %}
+      <a href="{% url 'product_detail' product.product.id %}" class="group m-4">
+        <div class="aspect-h-1 aspect-w-1 h-full w-full overflow-hidden rounded-lg bg-inherit xl:aspect-h-8 xl:aspect-w-7">
+          <img src="" alt="Football Jersey" class="h-full w-full object-contain object-center group-hover:opacity-75">
+        </div>
+        {% endif %}
+        <label class="btn bg-warning">
+            <a href="{% url 'delete_saved_product' product.product.id %}">Delete product</a>
+          </label>
+      <h3 class="mt-1 text-lg text-gray-700">{{ product.product.name }}</h3>
+      <p class="mt-1 text-lg font-medium text-gray-900">{{ product.product.brand }}</p>
+      <p class="mt-1 mb-5 text-lg font-medium text-gray-900">£{{ product.product.price }}</p>
+    </a>
+    {% endfor %}
+  </div>
+  </div>
+  {% else %}
+  <p>You have no products saved </p>
+  {% endif %}
 {% include 'includes/footer.html' %}
 {% endblock %}
