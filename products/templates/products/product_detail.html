@@ -33,6 +33,10 @@
           </div>
         </div>
         <div class="flex flex-col">
+          <form action="{% url 'save_product' product.id %}" method="post">
+            {% csrf_token %}
+            <input type="submit" class="btn bg-red-400" value="Save Item">
+           </form>
           <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
             {% csrf_token %}
             <div class="mt-4 w-full flex-row">

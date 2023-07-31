@@ -96,12 +96,11 @@
                       <a href="{% url 'add_product' %}">Add a product</a>
                     </li>
                     {% endif %}
+                    {% if request.user.is_authenticated %}
                     <li>
                       <a href="">Saved Items</a>
                     </li>
-                    <li>
-                      <a href="#">My Plans</a>
-                    </li>
+                    {% endif %}
                     {% if user.is_authenticated %}
                   <li class="nav-item"> <!--Log out-->
                       <a href="{% url 'account_logout' %}">Logout</a>

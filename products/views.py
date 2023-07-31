@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
-from .models import Product, Category, Brand, League
+from .models import Product, Category, Brand, League, SavedProducts
 from django.urls import reverse
 from django.db.models.functions import Lower
 from .forms import ProductForm
-from django.contrib.auth.decorators import user_passes_test
+from django.contrib.auth.decorators import user_passes_test, login_required
 
 
 # Create your views here.
@@ -132,3 +132,16 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product has been deleted.')
     return redirect(reverse('products'))
+
+
+@login_required
+def save_product(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    user = request.user
+
+    # Check if the user has already saved the item
+    if not SavedProducts.objects.filter(user=user, product=product).exists():
+        SavedProducts.objects.create(user=user, product=product)
+
+    return redirect('product_detail', product_id=product_id)
+
