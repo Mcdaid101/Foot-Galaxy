@@ -160,7 +160,7 @@ def saved_products(request):
     context = {
         'saved_products': saved_products
     }
-
+    
     return render(request, 'products/save_product.html', context)
 
 
@@ -172,7 +172,11 @@ def delete_saved_product(request, saved_product_id):
     saved_product = get_object_or_404(SavedProducts, id=saved_product_id)
     
     if request.user == saved_product.user:
-        saved_product.delete()
+        try:
+            saved_product.product  # This will trigger a DoesNotExist exception if the product doesn't exist
+            saved_product.delete()
+        except saved_product.product.DoesNotExist:
+            pass
+        messages.warning(request, 'This product has been removed from your Saved Items')
 
-    messages.warning(request, 'This product has been removed from your Saved Items')
-    return redirect(reverse('saved_products'))
+    return redirect('saved_products')

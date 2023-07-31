@@ -9,8 +9,6 @@
     </div>
   </div>
 
-  {% if saved_products %}
-
 
   <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 xl:gap-x-8">
     {% for product in saved_products %}
@@ -26,17 +24,16 @@
         </div>
         {% endif %}
         <label class="btn bg-warning">
-            <a href="{% url 'delete_saved_product' product.product.id %}">Delete product</a>
+            <a href="{% url 'delete_saved_product' product.id %}">Delete product</a>
           </label>
       <h3 class="mt-1 text-lg text-gray-700">{{ product.product.name }}</h3>
       <p class="mt-1 text-lg font-medium text-gray-900">{{ product.product.brand }}</p>
       <p class="mt-1 mb-5 text-lg font-medium text-gray-900">£{{ product.product.price }}</p>
     </a>
+    {% empty %}
+    <p class="text-center">Looks like you have no products saved, head back to <a class="text-red-600 underline" href="{% url 'products' %}">Products</a> and have a look!</p>
     {% endfor %}
   </div>
   </div>
-  {% else %}
-  <p>You have no products saved </p>
-  {% endif %}
 {% include 'includes/footer.html' %}
 {% endblock %}
