@@ -77,6 +77,7 @@
               <li class="mt-[12px]"><a>
                 <div class="dropdown dropdown-bottom dropdown-end">
                   <label tabindex="0" class="m-1">
+                    <!-- Avatar displays users first letter of account -->
                     <div class="avatar placeholder">
                       <div class="bg-neutral-focus text-neutral-content rounded-full w-12">
                         {% if user.is_authenticated %}
@@ -88,19 +89,23 @@
                     </div> 
                   </label>
                   <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                    <!--Profile -->
                     <li>
                       <a class="justify-between" href="{% url 'profile' %}">Profile</a>
                     </li>
+                      <!-- If authenticated add a product  -->
                     {% if request.user.is_authenticated %}
                     <li>
                       <a href="{% url 'add_product' %}">Add a product</a>
                     </li>
                     {% endif %}
+                    <!-- If authenticated users saved items  -->
                     {% if request.user.is_authenticated %}
                     <li>
                       <a href="{% url 'saved_products' %}">Saved Items</a>
                     </li>
                     {% endif %}
+                    <!-- If authenticated users saved items  -->
                     {% if user.is_authenticated %}
                   <li class="nav-item"> <!--Log out-->
                       <a href="{% url 'account_logout' %}">Logout</a>
@@ -126,8 +131,7 @@
                   </label>
                   <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
                     <p class="text-center">Shop</p>
-                    <li><a href="{% url 'products' %}">Gear</a></li>
-                    <li><a href="">Plans</a></li>
+                    <li><a href="{% url 'products' %}">Jerseys</a></li>
                   </ul>
                 </div>
               </a></li>
@@ -177,9 +181,8 @@
                <span class="ml-3">Home</span>
             </a>
          </li>
-         <li><a href="{% url 'bag' %}">
-          <div class="dropdown">
-            <label tabindex="0" class="m-1">
+         <li class="right-2"><a href="{% url 'bag' %}">
+            <label tabindex="0" class="m-1 h-10 w-10">
               <svg class="flex-shrink-0 w-8 h-8 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
                 <path d="M17 5.923A1 1 0 0 0 16 5h-3V4a4 4 0 1 0-8 0v1H2a1 1 0 0 0-1 .923L.086 17.846A2 2 0 0 0 2.08 20h13.84a2 2 0 0 0 1.994-2.153L17 5.923ZM7 9a1 1 0 0 1-2 0V7h2v2Zm0-5a2 2 0 1 1 4 0v1H7V4Zm6 5a1 1 0 1 1-2 0V7h2v2Z"/>
              </svg>
@@ -191,9 +194,6 @@
               {% endif %}
              </p>
              </label>
-             <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-            </ul>
-          </div>
         </a></li>
          <li>
             <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group mr-2">
@@ -209,37 +209,14 @@
                   </div> 
                 </label>
                <span class="flex-1 ml-3 whitespace-nowrap">Profile</span>
-               <span class="inline-flex items-center justify-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">Pro</span>
             </a>
          </li>
          <li>
-          <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
-             <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" aria-hidden="true"  fill="currentColor" viewBox="0 0 18 21">
-                <path d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z"/>
-             </svg>
-                <span class="flex-1 ml-3 text-left whitespace-nowrap">Shop:</span>
-          </button>
-          <ul class="dropdown" class="hidden py-2 space-y-2">
-                <li>
-                   <a href="{% url 'products' %}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
-                      <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
-                         <path d="M17 5.923A1 1 0 0 0 16 5h-3V4a4 4 0 1 0-8 0v1H2a1 1 0 0 0-1 .923L.086 17.846A2 2 0 0 0 2.08 20h13.84a2 2 0 0 0 1.994-2.153L17 5.923ZM7 9a1 1 0 0 1-2 0V7h2v2Zm0-5a2 2 0 1 1 4 0v1H7V4Zm6 5a1 1 0 1 1-2 0V7h2v2Z"/>
-                      </svg> &nbsp; Products</a>
-                </li>
-                <li>
-                   <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><i class="fa-solid fa-book-open-reader dark:text-white dark:hover:bg-gray-700"></i> &nbsp; Plans</a>
-                </li>
-          </ul>
+          <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <i class="fa-solid fa-shirt"></i>
+             <span class="flex-1 ml-3 whitespace-nowrap">Jerseys</span>
+          </a>
        </li>
-         <li>
-            <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-               <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="m17.418 3.623-.018-.008a6.713 6.713 0 0 0-2.4-.569V2h1a1 1 0 1 0 0-2h-2a1 1 0 0 0-1 1v2H9.89A6.977 6.977 0 0 1 12 8v5h-2V8A5 5 0 1 0 0 8v6a1 1 0 0 0 1 1h8v4a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-4h6a1 1 0 0 0 1-1V8a5 5 0 0 0-2.582-4.377ZM6 12H4a1 1 0 0 1 0-2h2a1 1 0 0 1 0 2Z"/>
-               </svg>
-               <span class="flex-1 ml-3 whitespace-nowrap">Orders</span>
-               <span class="inline-flex items-center justify-center w-3 h-3 p-3 ml-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">3</span>
-            </a>
-         </li>
          <li>
             <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
