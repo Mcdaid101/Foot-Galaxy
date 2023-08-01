@@ -2,7 +2,16 @@
 {% load static %}
 
 {% block content %}
-<!--Messages -->
+<input type="checkbox" id="my_modal_7" class="modal-toggle" />
+<div class="modal">
+  <div class="modal-box">
+    <h3 class="text-lg font-bold">Hi!</h3>
+    <p class="py-4">Create an account if you want to save an item</p>
+  </div>
+  <label class="modal-backdrop" for="my_modal_7">Close</label>
+</div>
+
+
 <section class="text-gray-700 body-font overflow-hidden bg-white">
   <div class="container px-5 py-24 mx-auto">
     <div class="lg:w-4/5 mx-auto flex flex-wrap">
@@ -11,11 +20,8 @@
         <h2 class="text-sm title-font text-gray-500 tracking-widest">{{ product.brand }}</h2>
         <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">{{ product.name }}</h1>
         <div class="flex mb-4">
-          <span class="flex items-center">
-            <span class="text-gray-600 ml-3">4 Reviews</span>
-          </span>
           <span class="flex ml-3 pl-3 py-2 border-l-2 border-gray-200 space-x-2">
-            {% if request.user.is_authenticated %}
+            {% if request.user.is_superuser %}
             <label class="btn bg-accent-focus">
               <a href="{% url 'edit_product' product.id %}">Edit product</a>
             </label>
@@ -33,10 +39,17 @@
           </div>
         </div>
         <div class="flex flex-col">
+          {% if request.user.is_authenticated %}
           <form action="{% url 'save_product' product.id %}" method="post">
+            <input id="save-product" type="submit" name="save-product" value="">
             {% csrf_token %}
-            <input type="submit" class="btn bg-red-400" value="Save Item">
+            <label for="save-product"><i class="fa-regular fa-bookmark cursor-pointer text-xl"></i></label>
            </form>
+           {% else %}
+           <label for="my_modal_7">
+            <i class="fa-regular fa-bookmark"></i>
+           </label>
+           {% endif %}
           <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
             {% csrf_token %}
             <div class="mt-4 w-full flex-row">

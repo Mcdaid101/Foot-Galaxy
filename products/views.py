@@ -6,6 +6,7 @@ from django.urls import reverse
 from django.db.models.functions import Lower
 from .forms import ProductForm
 from django.contrib.auth.decorators import user_passes_test, login_required
+from django import template
 
 
 # Create your views here.
@@ -173,7 +174,7 @@ def delete_saved_product(request, saved_product_id):
     
     if request.user == saved_product.user:
         try:
-            saved_product.product  # This will trigger a DoesNotExist exception if the product doesn't exist
+            saved_product.product 
             saved_product.delete()
         except saved_product.product.DoesNotExist:
             pass
