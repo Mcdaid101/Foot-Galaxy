@@ -1,1 +1,1 @@
-web: gunicorn foot_galaxy.wsgi:application
+web: gunicorn foot-galaxy.wsgi:application
