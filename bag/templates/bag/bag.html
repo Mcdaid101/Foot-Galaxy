@@ -2,10 +2,12 @@
 {% load static %}
 {% block content %}
 
-<div class="text-center m-6">Bag</div>
+<div class="text-center m-6">Bag <i class="fa-solid fa-bag-shopping"></i></div>
 
 {% if bag_items %}
-<div class="lg:flex lg:items-center lg:justify-center md:flex md:items-center md:justify-center">
+<div class="lg:flex flex-col lg:items-center lg:justify-center md:flex md:items-center md:justify-center">
+  {% for item in bag_items %}
+  <!--Table 1-->
   <table class="table table-auto lg:w-[60%] md:w-[90%] sm:w-screen overflow-hidden">
     <!-- Table head -->
     <thead>
@@ -14,13 +16,10 @@
         <th>Item</th>
         <th>Price</th>
         <th>Size</th>
-        <th>Qty</th>
-        <th>Subtotal</th>
       </tr>
     </thead>
     <!--Table body -->
     <tbody>
-      {% for item in bag_items %}
       <tr>
         <td>
              <!--Product name -->
@@ -40,6 +39,21 @@
         <td>
           {{ item.product.size }}
         </td>
+      </tr>
+    </tbody>
+  </table>
+  <!--Table 2-->
+  <table class="table table-auto lg:w-[60%] md:w-[90%] sm:w-screen overflow-hidden mb-10">
+    <!-- Table head -->
+    <thead>
+      <tr>
+        <th>Qty</th>
+        <th>Subtotal</th>
+      </tr>
+    </thead>
+    <!--Table body -->
+    <tbody>
+      <tr>
         <!--Quantity-->
         <td>
           {{ item.quantity }}
@@ -49,14 +63,14 @@
           £{{ item.product.price }}
         </td>
         <td>
-          <label class="btn cursor-pointer">
-          <a class="pointer text-danger" id="remove_{{ item.item_id }}">Remove</a>
+          <label class="btn bg-red-500 cursor-pointer">
+          <a class="pointer text-danger" id="remove_{{ item.item_id }}">Remove From Bag</a>
           </label>
         </td>
       </tr>
-      {% endfor %}
     </tbody>
   </table>
+  {% endfor %}
 </div>
 <div class="flex items-center justify-center w-screen mt-8">
   <div>
@@ -71,13 +85,13 @@
   </div>
   </div>
   <div class="flex items-center justify-center w-screen mt-8 space-x-4">
-  <a href="{% url 'products' %}" class="btn">
+  <a href="{% url 'products' %}" class="btn bg-yellow-200">
     <span class="icon">
         <i class="fas fa-chevron-left"></i>
     </span>
     <span class="text-uppercase">Keep Shopping</span>
 </a>
-<a href="{% url 'checkout' %}" class="btn">
+<a href="{% url 'checkout' %}" class="btn bg-green-400">
     <span class="text-uppercase">Secure Checkout</span>
     <span class="icon">
         <i class="fas fa-lock"></i>
