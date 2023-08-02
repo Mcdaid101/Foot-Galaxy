@@ -8,7 +8,7 @@
         <h1 class="text-3xl m-4">Checkout</h1>
     </div>
 
-    <div class="flex flex-col md:flex-col lg:flex-row lg:space-x-4">
+    <div class="flex flex-col md:flex-col lg:flex-row lg:space-x-4 overflow-hidden">
         <!--Order details -->
         <div class="md:w-[50%] sm:mb-5 border rounded-3xl">
           <div class="card h-full">
@@ -23,9 +23,7 @@
                     <th>Product</th>
                     <th>Item</th>
                     <th>Price</th>
-                    <th>Size</th>
                     <th>Qty</th>
-                    <th>Subtotal</th>
                   </tr>
                 </thead>
                 <!--Table body -->
@@ -46,17 +44,9 @@
                     <td>
                       £{{ item.product.price }}
                     </td>
-                    <!-- Size -->
-                    <td>
-                      {{ item.product.size }}
-                    </td>
                     <!--Quantity-->
                     <td>
                       {{ item.quantity }}
-                    </td>
-                    <!-- Subtotal -->
-                    <td>
-                      £{{ item.product.price }}
                     </td>
                   </tr>
                   {% endfor %}
