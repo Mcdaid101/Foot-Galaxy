@@ -14,9 +14,9 @@
           <p class="border-t-2 h-1 w-[90%]"></p>
          <li><a href="{% url 'products' %}?category=Modern">Modern</a></li>
          <li><a href="{% url 'products' %}?category=2010's">2010's</a></li>
-         <li><a href="{% url 'products' %}?category=2010's">2000's</a></li>
-         <li><a href="{% url 'products' %}?category=2010's">90's</a></li>
-         <li><a href="{% url 'products' %}?category=2010's">Vintage</a></li>
+         <li><a href="{% url 'products' %}?category=2000's">2000's</a></li>
+         <li><a href="{% url 'products' %}?category=90's">90's</a></li>
+         <li><a href="{% url 'products' %}?category=Vintage">Vintage</a></li>
         </div>
         <p class="border-t-2 h-1 w-[90%]"></p>
         <div class="py-1" role="none">
@@ -24,9 +24,9 @@
           <p class="border-t-2 h-1 w-[90%]"></p>
          <li><a href="{% url 'products' %}?league=England">England</a></li>
          <li><a href="{% url 'products' %}?league=Spain">Spain</a></li>
-         <li><a href="{% url 'products' %}?league=Spain">Italy</a></li>
-         <li><a href="{% url 'products' %}?league=Spain">France</a></li>
-         <li><a href="{% url 'products' %}?league=Spain">Germany</a></li>
+         <li><a href="{% url 'products' %}?league=Italy">Italy</a></li>
+         <li><a href="{% url 'products' %}?league=France">France</a></li>
+         <li><a href="{% url 'products' %}?league=Germany">Germany</a></li>
         </div>
         <p class="border-t-2 h-1 w-[90%]"></p>
         <div class="py-1" role="none">
@@ -38,14 +38,14 @@
         </div>
       </ul>
     </div>
-    <label for="sort" class="ml-2"></label>
+    <label for="sort" class="ml-1"></label>
     <select id="sort" name="sort_by" class="btn">
        <option value="price_asc">Price (Ascending)</option>
         <option value="price_desc">Price (Descending)</option>
         <option value="name">Name (A-Z)</option>
         <option value="-name">Name (Z-A)</option>
     </select>
-    <button id="sortButton" class="ml-2 btn">Sort</button>
+    <button id="sortButton" class="ml-1 btn">Sort</button>
   </div>
   <div class="navbar-end">
   </div>
@@ -64,17 +64,17 @@
   {% if product.image %}
   <a href="{% url 'product_detail' product.id %}" class="group m-4">
     <div class="aspect-h-1 aspect-w-1 h-full w-full overflow-hidden rounded-lg bg-inherit xl:aspect-h-8 xl:aspect-w-7">
-      <img src="{{ product.image.url }}" alt="Tall slender porcelain bottle with natural clay textured body and cork stopper." class="h-full w-full object-contain object-center group-hover:opacity-75">
+      <img src="{{ product.image.url }}" alt="Football Jersey" class="h-full w-full object-contain object-center group-hover:opacity-75">
     </div>
     {% else %}
     <a href="{% url 'product_detail' product.id %}" class="group m-4">
       <div class="aspect-h-1 aspect-w-1 h-full w-full overflow-hidden rounded-lg bg-inherit xl:aspect-h-8 xl:aspect-w-7">
-        <img src="" alt="Tall slender porcelain bottle with natural clay textured body and cork stopper." class="h-full w-full object-contain object-center group-hover:opacity-75">
+        <img src="" alt="Football Jersey" class="h-full w-full object-contain object-center group-hover:opacity-75">
       </div>
       {% endif %}
-    <h3 class="mt-1 text-lg text-gray-700">{{ product.name }}</h3>
-    <p class="mt-1 text-lg font-medium text-gray-900">{{ product.brand }}</p>
-    <p class="mt-1 mb-5 text-lg font-medium text-gray-900">£{{ product.price }}</p>
+    <h3 class="mt-1 text-lg">{{ product.name }}</h3>
+    <p class="mt-1 text-lg font-medium ">{{ product.brand }}</p>
+    <p class="mt-1 mb-5 text-lg font-medium ">£{{ product.price }}</p>
   </a>
   {% endfor %}
 </div>
