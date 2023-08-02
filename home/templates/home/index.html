@@ -31,9 +31,9 @@
       <figure><img src="{% static 'images/shirts-card.jpg' %}" alt="car!"/></figure>
       <div class="card-body">
         <h2 class="card-title">Shirts <i class="fa-solid fa-shirt animate-bounce"></i></h2> 
-        <p>From all the classics, to this season's newest additions we're guaranteed to have them.</p>
+        <p>From all the classics, to this season's newest additions we're guaranteed to have them all.</p>
         <div class="card-actions justify-end">
-          <button class="btn btn-primary bg-black  text-white border-white  hover:bg-red-600 hover:text-white">Browse</button>
+          <button class="btn btn-primary bg-red-600  text-white border-white  hover:bg-red-300 hover:text-white">Browse</button>
         </div>
       </div>
     </div>
@@ -44,10 +44,7 @@
       <div class="card-body">
         <h2 class="card-title">Social <i class="fa-regular fa-futbol animate-spin"></i></h2>
         <p>Sign up to our Weekly 5 a side tournaments</p>
-        <p>Register at the link below or at one of our <a class="text-red-600 underline" href="{% url 'about' %}">Stores</a></p>
-        <div class="card-actions justify-end">
-          <button class="btn btn-primary bg-red-600 border-white  hover:bg-black">Sign up</button>
-        </div>
+        <p>Subscribe at the link below for a registration form or at one of our <a class="text-red-600 underline" href="{% url 'about' %}">Stores</a></p>
       </div>
     </div>
   </div>
@@ -58,12 +55,65 @@
         <h2 class="card-title">Reviews <i class="fa-solid fa-truck-fast animate-bounce ml-2 text-base"></i></h2>
         <p>Love our jerseys and service? Then why not tell everyone about us and give us a review.</p>
         <div class="card-actions justify-end">
-          <button class="btn btn-primary  bg-black  text-white border-white hover:bg-red-600"><a href="{% url 'reviews' %}">Review</a></button>
+          <button class="btn btn-primary  bg-red-600 text-white border-white hover:bg-red-300"><a href="{% url 'reviews' %}">Review</a></button>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<!--Mail chimp newsletter -->
+<div id="mc_embed_shell">
+<div id="mc_embed_signup">
+<form action="https://herokuapp.us9.list-manage.com/subscribe/post?u=869337a0b1b8600c823e97fe4&amp;id=59a05f7e75&amp;f_id=001231e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+    <div id="mc_embed_signup_scroll" class="mt-20 max-w-screen border rounded-lg"><h2 class="text-center">Subscribe</h2>
+      <h3 class="text-center">Join our mailing list to find out about new offers and for info on our weekly 5 a side sessions</h3>
+        <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+        <div class="mc-field-group"><label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label><input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value=""><span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span></div>
+    <div id="mce-responses" class="clear foot">
+        <div class="response" id="mce-error-response" style="display: none;"></div>
+        <div class="response" id="mce-success-response" style="display: none;"></div>
+    </div>
+<div aria-hidden="true" style="position: absolute; left: -5000px;">
+    /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
+    <input type="text" name="b_869337a0b1b8600c823e97fe4_59a05f7e75" tabindex="-1" value="">
+</div>
+    <div class="optionalParent">
+        <div class="clear foot">
+            <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button bg-black text-white" value="Subscribe">
+        </div>
+    </div>
+</div>
+</form>
+</div>
+
 {% include 'includes/footer.html' %}
+<!--Mail chimp scripts -->
+<style type="text/css">
+  #mc_embed_signup{}
+  /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+     We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+  </style>
+<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js">
+</script>
+<script type="text/javascript">
+(function($) {
+    window.fnames = new Array();
+    window.ftypes = new Array();
+    fnames[0] = 'EMAIL';
+    ftypes[0] = 'email';
+    fnames[1] = 'FNAME';
+    ftypes[1] = 'text';
+    fnames[2] = 'LNAME';
+    ftypes[2] = 'text';
+    fnames[3] = 'ADDRESS';
+    ftypes[3] = 'address';
+    fnames[4] = 'PHONE';
+    ftypes[4] = 'phone';
+    fnames[5] = 'BIRTHDAY';
+    ftypes[5] = 'birthday';
+  }(jQuery));
+var $mcj = jQuery.noConflict(true);
+</script></div>
 {% endblock %}
 

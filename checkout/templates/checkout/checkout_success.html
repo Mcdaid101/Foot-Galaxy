@@ -81,7 +81,7 @@
                   </tr>
                   <tr>
                     <th>{{ order.phone_number }}</th>
-                    <th>Grand total: £{{ order.grand_total }}</th>
+                    <th>Grand total: £{{ grand_total|floatformat:2 }}</th>
                   </tr>
               </tbody>
             </table>
@@ -92,7 +92,7 @@
                 <span>
                     <i class="fas fa-gifts"></i>
                 </span>
-                <span class="text-uppercase">Now check out the latest deals!</span>
+                <span class="text-uppercase">Forget something? Check out these deals!</span>
             </a>        
           </div>
         </div>
