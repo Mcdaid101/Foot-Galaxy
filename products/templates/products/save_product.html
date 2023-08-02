@@ -2,38 +2,35 @@
 {% load static %}
 
 {% block content %}
-<h1 class="text-center text-lg font">Saved Items</h1>
+<h1 class="text-center text-lg mt-10">Saved Items <i class="fa-solid fa-shirt"></i></h1>
 <div class="flex items-center justify-center w-full mt-8">
     <div>
      {{ saved_products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
     </div>
   </div>
 
-
-  <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 xl:gap-x-8">
+  <div class="flex flex-col md:flex-row space-x-4 sm:content-center">
     {% for product in saved_products %}
-    {% if product.product.image %}
-    <a href="{% url 'product_detail' product.product.id %}" class="group m-4">
-      <div class="aspect-h-1 aspect-w-1 h-full w-full overflow-hidden rounded-lg bg-inherit xl:aspect-h-8 xl:aspect-w-7">
-        <img src="{{ product.product.image.url }}" alt="Football Jersey" class="h-full w-full object-contain object-center group-hover:opacity-75">
-      </div>
-      {% else %}
-      <a href="{% url 'product_detail' product.product.id %}" class="group m-4">
-        <div class="aspect-h-1 aspect-w-1 h-full w-full overflow-hidden rounded-lg bg-inherit xl:aspect-h-8 xl:aspect-w-7">
-          <img src="" alt="Football Jersey" class="h-full w-full object-contain object-center group-hover:opacity-75">
-        </div>
-        {% endif %}
-        <label class="btn bg-warning">
-            <a href="{% url 'delete_saved_product' product.id %}">Delete product</a>
+    <div class="max-w-[20%%] mt-20">
+      <div class="card">
+        <div class="card-body">
+          <a href="{% url 'product_detail' product.product.id %}" class="group m-4">
+            <div class="max-h-[400px] overflow-hidden rounded-lg bg-inherit xl:aspect-h-8 xl:aspect-w-7">
+              <img src="{{ product.product.image.url }}" alt="Football Jersey" class="max-h-[400px] object-contain object-center group-hover:opacity-75">
+            </div>
+            </a>
+            <h2 class="card-title">{{ product.product.name }}</h2>
+          <p class="mt-1 text-lg font-medium text-gray-900">{{ product.product.brand }}</p>
+          <p class="mt-1 mb-5 text-lg font-medium text-gray-900">£{{ product.product.price }}</p>
+          <label class="btn bg-warning">
+            <a href="{% url 'delete_saved_product' product.id %}">Unsave <i class="fa-solid fa-trash-can"></i></a>
           </label>
-      <h3 class="mt-1 text-lg text-gray-700">{{ product.product.name }}</h3>
-      <p class="mt-1 text-lg font-medium text-gray-900">{{ product.product.brand }}</p>
-      <p class="mt-1 mb-5 text-lg font-medium text-gray-900">£{{ product.product.price }}</p>
-    </a>
+        </div>
+      </div>
+    </div>
     {% empty %}
-    <p class="text-center">Looks like you have no products saved, head back to <a class="text-red-600 underline" href="{% url 'products' %}">Products</a> and have a look!</p>
+    <p class="ml-32">Looks like you have no products saved, head back to <a class="text-red-600 underline" href="{% url 'products' %}">Products</a> and have a look!</p>
     {% endfor %}
-  </div>
   </div>
 {% include 'includes/footer.html' %}
 {% endblock %}
