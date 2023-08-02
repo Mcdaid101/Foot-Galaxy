@@ -3,3 +3,4 @@ Disallow: /accounts/
 Disallow: /bag/
 Disallow: /checkout/
 Disallow: /profile/
+Sitemap: https://foot-galaxy-e4d24e6240cb.herokuapp.com/sitemap.xml
