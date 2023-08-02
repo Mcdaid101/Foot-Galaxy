@@ -1,36 +1,68 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]" aria-hidden="true">
-    <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff0000] to-[#a00030] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+<div class="flex items-center justify-center w-full mt-8">
+ <div class="lg:w-[50%] sm:w-[80%] md:w-[70%]">
+<h1 class="mb-11 text-center text-xl font-bold">Welcome to Foot Galaxy! <i class="fa-regular fa-futbol animate-bounce ml-1"></i></h1>
+<h2 class="mb-11 text-center font-semibold">We are a premier destination for all football enthusiasts, offering top-quality jerseys and great customer service. With our well-established store in London, we are dedicated to providing the best products and services to football lovers in the region.</h2>
+<div class="collapse collapse-arrow bg-base-200">
+    <input type="radio" name="my-accordion-2" checked="checked" /> 
+    <div class="collapse-title text-xl font-medium text-center">
+      Our History
+    </div>
+    <div class="collapse-content"> 
+        <ul class="list-disc ml-3 space-y-5">
+            <li>Founded by passionate football aficionados, our journey began in the bustling city of London. Our founders, driven by their love for the sport and a vision to bring football enthusiasts together, embarked on a mission to create a one-stop destination for all things football-related. With a focus on quality,
+               authenticity, and customer satisfaction, we quickly gained popularity and expanded our presence to cater to the ever-growing demand.</li>
+          </ul>
+    </div>
   </div>
-<div class="flex items-center justify-center w-screen mt-8">
- <div class="lg:w-[50%] sm:w-screen md:w-[70%] sm:ml-2 sm:mr-2 md:ml-0 md:mr-0">
-    <section>
-        <div class="container mx-auto">
-            <h1 class="text-5xl font-bold mb-4">Welcome to Foot Galaxy!</h1>
-            <p class="text-lg text-gray-700">We are a premier destination for all football enthusiasts, offering top-quality jerseys and great customer service. With our well-established stores in London, we are dedicated to providing the best products and services to football lovers in the region.</p>
-
-            <h2 class="text-3xl font-bold mt-8 mb-4">Our History</h2>
-            <p class="text-lg text-gray-700">Founded by passionate football aficionados, our journey began in the bustling city of London. Our founders, driven by their love for the sport and a vision to bring football enthusiasts together, embarked on a mission to create a one-stop destination for all things football-related. With a focus on quality, authenticity, and customer satisfaction, we quickly gained popularity and expanded our presence to cater to the ever-growing demand.</p>
-
-            <h2 class="text-3xl font-bold mt-8 mb-4">Our Stores</h2>
-            <p class="text-lg text-gray-700">Our flagship store, located in the heart of London, on Oxford street, has been a hub for football fans seeking the latest, official jerseys of their favorite clubs and national teams. Boasting an extensive collection of football apparel, we take pride in offering genuine merchandise that allows you to wear your team's colors with pride.</p>
-            <p class="text-lg text-gray-700">Exciting news awaits the football community in Donegal, as we are thrilled to announce the upcoming opening of our second store. Situated in the town of Letterkenny amid the scenic landscapes of Donegal, this store will bring the same commitment to quality and service closer to our Irish patrons.  Check out it's location on the map below!</p>
-            <div class="flex items-center justify-center mt-8">
-                <div class=" w-full h-64" style="overflow:hidden;"><div id="display-google-map" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Church+Lane,+Letterkenny,+County+Donegal,+Ireland&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><a class="googlemaps-made" href="https://kbj9qpmy.com/hrn" id="grab-map-authorization"></a><style>#display-google-map img{max-height:none;max-width:none!important;background:none!important;}</style></div>
-            </div>
-
-            <h2 class="text-3xl font-bold mt-8 mb-4">Commitment to Excellence</h2>
-            <p class="text-lg text-gray-700">At our core, we are more than just a retailer; we are a community of football enthusiasts dedicated to elevating the sport we love. Our commitment to excellence extends to every product we offer and every service we provide. As we expand our reach across Britain and Ireland, we remain true to our values of authenticity, integrity, and customer satisfaction.</p>
-
-            <h3 class="text-2xl font-bold mt-8">Join us in celebrating the beautiful game, and explore our wide selection of football jerseys. Whether you visit our flagship store in London or the soon-to-be-opened store in Donegal, we look forward to being a part of your football journey. Play with passion, train with purpose – together, let's take your football experience to new heights!</h3>
-        </div>
-    </section>
+  <div class="collapse collapse-arrow bg-base-200 mt-14">
+    <input type="radio" name="my-accordion-2" /> 
+    <div class="collapse-title text-xl font-medium text-center">
+      Our Stores
+    </div>
+    <div class="collapse-content"> 
+        <ul class="list-disc ml-3 space-y-5">
+            <li>Our flagship store, located in the heart of London, on Oxford street, has been a hub for football fans seeking the latest, official jerseys of their favorite clubs and national teams. Boasting an extensive collection of football apparel,
+               we take pride in offering genuine merchandise that allows you to wear your team's colors with pride.</li>
+        </ul>
+    </div>
+  </div>
+  <div class="collapse collapse-arrow bg-base-200 mt-14">
+    <input type="radio" name="my-accordion-2" /> 
+    <div class="collapse-title text-xl font-medium text-center">
+      New Store
+    </div>
+    <div class="collapse-content"> 
+        <ul class="list-disc ml-3 space-y-5">
+            <li>Exciting news awaits the football community in Donegal, as we are thrilled to announce the upcoming opening of our second store. Situated in the town of Letterkenny amid the scenic landscapes of Donegal, 
+              this store will bring the same commitment to quality and service closer to our Irish patrons.  Check out it's location on the map below!</li>
+        </ul>
+        <div class="flex items-center justify-center mt-8">
+          <div class=" w-full h-64" style="overflow:hidden;"><div id="display-google-map" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" 
+            src="https://www.google.com/maps/embed/v1/place?q=Church+Lane,+Letterkenny,+County+Donegal,+Ireland&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><a class="googlemaps-made" href="https://kbj9qpmy.com/hrn" id="grab-map-authorization"></a><style>#display-google-map img{max-height:none;max-width:none!important;background:none!important;}</style></div>
+      </div>
+    </div>
+  </div>
+  <div class="collapse collapse-arrow bg-base-200 mt-14">
+    <input type="radio" name="my-accordion-2" /> 
+    <div class="collapse-title text-xl font-medium text-center">
+      Commitment to Excellence
+    </div>
+    <div class="collapse-content"> 
+        <ul class="list-disc ml-3 space-y-5">
+            <li>At our core, we are more than just a retailer; we are a community of football enthusiasts dedicated to 
+              elevating the sport we love. Our commitment to excellence extends to every product we offer and every service we provide. 
+              As we expand our reach across Britain and Ireland, we remain true to our values of authenticity, integrity,
+              and customer satisfaction.</li>
+          </ul>
+    </div>
+  </div>
+  <h3 class="font-semibold mt-8">Join us in celebrating the beautiful game, and explore our wide selection of football jerseys. Whether you visit our flagship store in London or the soon-to-be-opened store in Donegal, we look forward to being a part of your football journey. 
+    Play with passion, train with purpose – together, let's take your football experience to new heights!</h3>
+  </div>
  </div>
 </div>
-<div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
-    <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#a12056] to-[#f30000] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
-  </div>
 {% include 'includes/footer.html' %}
 {% endblock %}
