@@ -9,28 +9,51 @@
     </div>
   </div>
 
-  <div class="flex flex-col md:flex-row space-x-4 sm:content-center">
+  <div class="flex items-center justify-center flex-row w-full mt-8">
+    <div class="lg:max-w-[80%]">
     {% for product in saved_products %}
-    <div class="max-w-[20%%] mt-20">
-      <div class="card">
-        <div class="card-body">
+    <div class="grid grid-cols-1 mb-10">
           <a href="{% url 'product_detail' product.product.id %}" class="group m-4">
             <div class="max-h-[400px] overflow-hidden rounded-lg bg-inherit xl:aspect-h-8 xl:aspect-w-7">
               <img src="{{ product.product.image.url }}" alt="Football Jersey" class="max-h-[400px] object-contain object-center group-hover:opacity-75">
             </div>
             </a>
             <h2 class="card-title">{{ product.product.name }}</h2>
-          <p class="mt-1 text-lg font-medium text-gray-900">{{ product.product.brand }}</p>
-          <p class="mt-1 mb-5 text-lg font-medium text-gray-900">£{{ product.product.price }}</p>
-          <label class="btn bg-warning">
+          <p class="text-lg">{{ product.product.brand }}</p>
+          <p class="text-lg">£{{ product.product.price }}</p>
+          <label class="btn bg-warning mt-20">
             <a href="{% url 'delete_saved_product' product.id %}">Unsave <i class="fa-solid fa-trash-can"></i></a>
           </label>
         </div>
-      </div>
-    </div>
     {% empty %}
     <p class="ml-32">Looks like you have no products saved, head back to <a class="text-red-600 underline" href="{% url 'products' %}">Products</a> and have a look!</p>
     {% endfor %}
   </div>
+</div>
+<div class="flex items-center justify-center w-full mt-5">
+  <button class="btn bg-yellow-300" onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa-regular fa-circle-up"></i></button>
+  </div>
+<div>
+<script>
+      // go to top of page function from w3 schools 
+      let mybutton = document.getElementById("myBtn");
+    
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+    
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    } 
+</script>
 {% include 'includes/footer.html' %}
 {% endblock %}
