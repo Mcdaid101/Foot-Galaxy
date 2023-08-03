@@ -29,11 +29,7 @@ I built this website from scratch using the Django framework and the knowledge I
 
 ## Site Aims
 
-* Provide Tv lovers with a forum to post reviews of any Tv series they have watched and interact with other Tv enthusiasts.
-* Allow users to find different Tv series from the different choice of series categories on the site.
-* Allow users to comment on reviews and reply to any on their own.
-* Allow users to like other user's posts.
-* Provide the site admin with the ability to approve and disapprove posts and comments to promote a safe space for users. 
+* Provide football lovers with a store to purchase classic football shirts.
 
 # Design 
 
@@ -49,24 +45,37 @@ The agile methodology was implemented in the design of this project. The project
 
 ## User stories
 ### First iteration
-* 1. 
-* 2. 
-* 3. 
+* 1. As a shopper I want to view products the site is offering.
+* 2. As a shopper I want to be able to view the info on a product such as its name, price and size.
+* 3. As a shopper I want to be able to apply different filters to products to filter and view them by price, in alphabetical order etc.
+* 4. As the site admin I want to be able to edit pricing, images and description.
+* 5. As the site admin I want to be able to add new products for sale and delete products if they are no longer being sold.
 ### Second iteration
-* 1. 
-* 2. 
-* 3. 
-* 4. 
-* 5. 
+* 6. As a shopper I want to be able to view a FAQ section for any frequently asked questions.
+* 7. As a shopper I want to be able to add products to my basket and view them before proceeding to the checkout.
+* 8. As a shopper I want to be able to remove items from my basket
+* 9. As a shopper I want to view my order details before I checkout.
+* 10. As a shopper I want to be able to enter payment info quickly and easily and save it for the future.
+* 11. As the site admin I want to be able to view orders made by customers to ship them as soon as possible.
 ### Third iteration
-* 1. 
-* 2. 
-* 3. 
+* * 12.  As a shopper I want to be able to create an account to be able to interact with the site and feel a part of it.
+* 13. As a shopper I want to be able to log in and out of my account on the site.
+* 14. As a shopper I want to be able to view my past orders on my profile
+* 15. As a shopper I want to be able to save items to my account to show I like them and would maybe like to purchase them in the future.
+* 16. As a shopper I want to receive a confirmation email when signing up.
+### Fourth Iteration
+* 17. As a site owner I want to be able to add, update and delete products from the main site
+* 18. As a shopper I want to know the location of the site’s store so I can shop there in person.
+* 19. As a shopper I want to be able to leave a review on the site’s services.
+* 20. As a shopper I want to be able to recover my password if I have forgotten it.
+* 21. As a shopper I want to receive regular news on the site and new products/plans via email.
+* 22. As the site admin I want to create a mailing list for subscribers to the site’s newsletters.
+* 23. As a shopper I want to be able to access the site’s social media to keep up to date with new plans and products.
 
 ### Future features 
-* 
-* 
-* 
+* Order confirmation email.
+* The ability for the site admin to manage review via the website ui.
+* A football training plan subscription section giving users the chance to subscribe and unsubscribe
 <br>
 
 ## Wireframes and Schema

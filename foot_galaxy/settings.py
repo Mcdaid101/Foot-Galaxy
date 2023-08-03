@@ -56,7 +56,6 @@ INSTALLED_APPS = [
     # Other
     'crispy_forms',
     'crispy_tailwind',
-    'star_ratings',
     'tailwind',
     'theme',
     'django_browser_reload',
