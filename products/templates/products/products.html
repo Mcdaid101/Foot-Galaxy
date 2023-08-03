@@ -64,12 +64,12 @@
   {% if product.image %}
   <a href="{% url 'product_detail' product.id %}" class="group m-4">
     <div class="aspect-h-1 aspect-w-1 h-full w-full overflow-hidden rounded-lg bg-inherit xl:aspect-h-8 xl:aspect-w-7">
-      <img src="{{ product.image.url }}" alt="Football Jersey" class="h-full w-full object-contain object-center group-hover:opacity-75">
+      <img src="{% product.image.url %}" alt="Football Jersey" class="h-full w-full object-contain object-center group-hover:opacity-75">
     </div>
     {% else %}
     <a href="{% url 'product_detail' product.id %}" class="group m-4">
       <div class="aspect-h-1 aspect-w-1 h-full w-full overflow-hidden rounded-lg bg-inherit xl:aspect-h-8 xl:aspect-w-7">
-        <img src="" alt="Football Jersey" class="h-full w-full object-contain object-center group-hover:opacity-75">
+        <img src="{% static 'images/download.jpg' %}" alt="Football Jersey" class="h-full w-full object-contain object-center group-hover:opacity-75">
       </div>
       {% endif %}
     <h3 class="mt-1 text-lg">{{ product.name }}</h3>
