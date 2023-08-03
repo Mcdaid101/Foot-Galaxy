@@ -82,9 +82,27 @@ The agile methodology was implemented in the design of this project. The project
 * A football training plan subscription section giving users the chance to subscribe and unsubscribe
 <br>
 
+# Business Model 
+Foot Galaxy's Business model is a Business to customer model. As Foot galaxy aims to sell products directly to consumers. See below the techniques Foot Galaxy use to implement their business model and boost sales and growth. 
+
+# Search engine optimization
+For SEO I searched Wordtracker.com for my keywords which I included in the meta tags to promote SEO. I entered these words into google and compared them to the sites and words that would come up along wit the "People also searched for" sections. I then added what I thought were the most relevant to my meta tags and added them as much as possile in my site. 
+
+## Robots.txt and Sitemap
+To further boost SEO I created a robots.txt file and added a sitemap along side this which I downloaded from XML-sitemaps.com.
+
+# Marketing
+
+* Marketing at Foot Galaxy will be mainly done through social media as it is a large Business to customer company. The store runs a facebook page titled Foot Galaxy and shoppers can find out more about the store there and receive any updates on new deals and future events. 
+![Facebook page](static/images/facebook%20screenshot.png)
+
+* Email marketing is also a key part of Foot galaxy. Users can subscribe to Foot Galaxy's mailing list via the home page to receieve news on products, sales and more. The mailing list also updates shoppers on the store's weekly 5 a side a sessions too if they want to attend. 
+
+
+
 ## Wireframes and Schema
 
-<details><summary>Desktop Wireframes</summary>
+<details><summary>Wireframes</summary>
 <p>
 
 ![Home page](static/images/home%20wireframe.png)
@@ -174,6 +192,30 @@ The saved products page displays the user's saved products and allows user to de
 The add product view is only accessible for the site admin via the nav bar. 
 ![Add Product](static/images/adddproduct.png)
 
+### Edit a Product
+The edit product view is only accessible for the site admin via the nav bar. 
+![Edit Product](static/images/editproduct.png)
+
+### Bag
+The site bag renders what the user has added to it and allows them to then proceed to checkout and purchase them. Users can also remove items from their bag and view details on their products. 
+![Bag](static/images/bag.png)
+
+### Checkout
+The checkout page shows again what items the user is purchasing and it's info and a payment form. The user can save their info if they are logged in. A stripe API card payment form is located at the bottom of the page along with a secure checkout button. 
+![Checkout](static/images/checkout.png)
+
+### Checkout Success
+The checkout success page is rendered if the user successfully makes a payment. Once their payment goes through they will be met with this screen and given an order number. The user can then find this order in their profile in the previous orders section if logged in. 
+![Checkout Success](static/images/orderhistory.png)
+![Checkout Success](static/images/checkoutsuccess.png)
+
+### About
+The about page informs the user about the history of the company and on store location. 
+![About](static/images/about.png)
+
+### FAQS
+The FAQS page answers any common questions about the site and provides a returns policy. 
+![FAQS](static/images/faqs.png)
 
 # Technology Used 
 <br>
@@ -243,129 +285,6 @@ Lighthouse testing
 * At first my test results came up quite poor but after switching to an incognito window on chrome and downsizing the main hero image on the home page the site got a high score as seen in the images below. All pages got a similar result.
  ![Test]()
 
-<br>
-
-## Manual Testing
-
-## First time stories 
-* As a first time user: I want to be able to post a review on Telephile <br>
-Testing done to make sure that users can post reviews.
-<details><summary>First time user 1</summary>
-<p>
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Add your own post| Once signed up and logged in, users can navigate to the add a review page and add a post. The post is successful ifthey receive an alert telling them so | The user receives an alert notifying them that their post is pending  | Works as expected |
-</p>
-</details>
-<br>
-<br>
-
-* As a first time user: I want to be able to sign up and create an account <br>
- Testing done to ensure that users can sign up to the website.
-<details><summary>First time user 2</summary>
-<p>
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Create an account feature | Users can navigate to the sign up page and create an account  | Once the user signs up their account is created and they can log in and out as they please and make use of the rest of the site's features  | Works as expected |
-</p>
-</details>
-<br>
-<br>
-
-* As a first time user: I want to be able to leave comments on other's posts <br>
-  Testing done to ensure that users can comment on posts
-<details><summary>First time user 3</summary>
-<p>
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-|Comments | Users can comment underneath other users posts | Comments appear once they are posted and approved by the admin | Works as expected |
-</p>
-</details>
-<br>
-<br>
-
-* As a first time user: I want to be able to view how many likes and comments are on a post  <br>
- Testing done to ensure that the amount of likes and comments on a post appear underneath the post
-<details><summary>First time user 4</summary>
-<p>
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-|Amount of likes and comments | Navigate any posts page and find out how many users commented and liked the post underneath the image beside the author  | The amount of likes and comments appear underneath the post | Works as expected |
-</p>
-</details>
-<br>
-<br>
-
-* As a first time user: I want to see what posts I have made <br>
- Testing done to ensure that the your reviews section shows the user's reviews.
-<details><summary>First time user 5</summary>
-<p>
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Your reviews section| navigate to the your reviews section to view the posts you have made | Your reviews appear in the your reviews section  | Works as expected |
-</p>
-</details>
-<br>
-<br>
-
-## Returning stories
-
-* As a returning user: I want to be able to log in without putting my details again <br>
-Testing done to ensure each user can have their details remembered for login. 
-<details><summary>Returning user 1</summary>
-<p>
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Remember login details | Navigate to login page and click remmeber details | The user's login details will be remembered for next time | Works as expected |
-</p>
-</details>
-<br>
-<br>
-
-* As a returning user: I want to be able to like posts I enjoy and have the option of unliking them if I want <br>
-Testing done to ensure that users can like and unlike posts
-<details><summary>Returning user 2</summary>
-<p>
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Likes | Clicking the heart under a post liked the post and clicking it again unlikes it | The post is liked  | Works as expected |
-</p>
-</details>
-<br>
-<br>
-
-## Owner stories 
-* As the site owner: I want to be able to moderate what is posted on the site  <br>
-Testing done to ensure that the admin can approve and disapprove of what is posted on the site
-<details><summary>Site owner 1</summary>
-<p>
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Approve of and disapprove of posts and comments | Admin can approve and disapprove of users posts and comments, they will not get posted until they are approved| Posts and comments do not appear until approved | Works as expected |
-</p>
-</details>
-<br>
-<br>
-
-* As the site owner: I want to be able to choose the category each post belongs in  <br>
-Testing done to ensure that posts can be placed in a specific category
-<details><summary>Site owner 2</summary>
-<p>
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Categorizing | Admin can choose which category a post belongs to | The category the admin chooses the post to be in, is which one it ends up in the category page  | Works as expected |
-</p>
-</details>
-<br>
 <br>
 
 
