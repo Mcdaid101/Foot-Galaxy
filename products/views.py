@@ -11,7 +11,7 @@ from django import template
 
 # Create your views here.
 def all_products(request):
-    """ 
+    """
     all products view
     """
     products = Product.objects.all()
@@ -32,17 +32,17 @@ def all_products(request):
     else:
         products = Product.objects.all().order_by('name')  # Default products
 
-    if request.GET:  
+    if request.GET:
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
-  
+
         if 'brand' in request.GET:
             brands = request.GET['brand'].split(',')
             products = products.filter(brand__name__in=brands)
             brands = Brand.objects.filter(name__in=brands)
-        
+   
         if 'league' in request.GET:
             leagues = request.GET['league'].split(',')
             products = products.filter(league__name__in=leagues)
@@ -53,7 +53,7 @@ def all_products(request):
             if not query:
                 messages.error(request, "You didn't enter any search criteria!")
                 return redirect(reverse('products'))
-            
+      
             queries = Q(name__icontains=query) | Q(desc__icontains=query)
             products = products.filter(queries)
 
@@ -92,7 +92,7 @@ def add_product(request):
             messages.error(request, 'Failed to add product.')
     else:
         form = ProductForm()
-        
+   
     template = 'products/add_product.html'
     context = {
         'form': form,
@@ -164,7 +164,7 @@ def saved_products(request):
     context = {
         'saved_products': saved_products
     }
-    
+
     return render(request, 'products/save_product.html', context)
 
 
@@ -174,10 +174,10 @@ def delete_saved_product(request, saved_product_id):
     delete an item from your Saved products
     """
     saved_product = get_object_or_404(SavedProducts, id=saved_product_id)
-    
+
     if request.user == saved_product.user:
         try:
-            saved_product.product 
+            saved_product.product
             saved_product.delete()
         except saved_product.product.DoesNotExist:
             pass

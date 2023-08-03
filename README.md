@@ -363,14 +363,17 @@ The 404 renders if user gets a 404 error.
 
 
 <br>
-Grandtotal not appearing on the order confirmation message after checkout. strange bug as it appears in the checkout and bag pages, will get to the bottom of it in the future. More torublshooting needed as this is a big problem for shoppers who will want to be reminded of what they paid. 
+
+* Grandtotal not appearing on the order confirmation message after checkout. strange bug as it appears in the checkout and bag pages, will get to the bottom of it in the future. More torublshooting needed as this is a big problem for shoppers who will want to be reminded of what they paid. 
 
 <br>
-After uploading my media files to AWS they still failed to render on the live site, the directory that the images were in were wrong, placing the images in the correct directory quickly fixed this. 
+
+* After uploading my media files to AWS they still failed to render on the live site, the directory that the images were in were wrong, placing the images in the correct directory quickly fixed this. 
 
 <br>
 
 ![Terminal Bugs ](static/images/terminal%20bugs.png)
+* The css bug appeared at end of devlopment, unsure of the cause have extensively tried to fix and no matter what info I have found on trying to rectify it does not work. Further troublshooting will be required to remove. 
 
 # Testing and validation
 
@@ -384,12 +387,13 @@ I have manually tested this project by doing the following:
 
 W3C validations
 * The w3c HTML validators pulled up alot of issues to do with django syntax, any that were not django I quickly corrected. 
-![HTML]()
-![CSS]()
+![HTML](static/images/html%20validator.png)
+![HTML](static/images/html%20validator%203.png)
+![HTML](static/images/inputslash.png)
 
 Pep8
-* No errors were returned from the code institute's python Linter or from extendsclass.com/pythontester.
-![Python]()
+* Some errors still remain (lines too long) bar this no other major errors were returned from the code institute's python Linter. Ran out of time in development will return in the future to indent the code.
+![Python](static/images/pythonlinter.png)
 
 Lighthouse testing
 * The lighthouse testing for the site did not score the best due to the large storage size of the images and other features, this is something to work on. 
@@ -398,6 +402,8 @@ Lighthouse testing
 
 <br>
 
+Unit tests
+* Some unit tests have been implemented, ultimately ran out of time in development. More testing will take place at a future date. 
 
 # Deployment 
 
