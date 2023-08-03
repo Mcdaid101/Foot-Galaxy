@@ -110,31 +110,69 @@ The agile methodology was implemented in the design of this project. The project
 </p>
 </details>
 
+<details><summary>Site Flow Chart</summary></summary>
+<p>
+
+I sketched this chart out at the beginning of development, the future feature nutrition plans did not make it to development in the end. 
+![Flow Chart](static/images/flowchart.png)
+
+</p>
+</details>
+
 ## Design choices 
 <br>
 
 ### Colour scheme
+The colour scheme of the website is a simple white with flashes of red in the background, easy on the eye and stylish and modern. When the site is viewed on a device on dark mode, the colour scheme automatically switches from white to black, along with the font from black to white. This is a feature of tailwind's css. 
 
+### Dark mode contrast
+![Ligh mode](static/images/lightmode1.png)
+![Dark mode](static/images/darkmode1.png)
+![Light mode](static/images/lightmode2.png)
+![Dark mode](static/images/dark%20mode2.png)
 
 ### Font 
-
+The font for this site is the generic arial sans serif, a classic font that works well on all sites. I observed it was used across most modern websites and e commerce stores and implemented it here also. 
 
 ## Features
 <br>
 
 ### Nav bar
-To navigate the site Users use the nav bar at the top of each page. What appears on the nav bar depends on if the user is authenticated or not. (if the user is signed up)
-* Signed out 
-![Nav bar signed out]()
-* Signed in
-![Nav bar signed in]()
+To navigate the site Users use the nav bar at the top of each page.
+The nav contains a search bar and links to shop and access the users profile along with the shopping bag. On smaller screens a burger button replaces these items and they move to a drawer. 
+![Nav bar](static/images/nav.png)
+![Drawer](static/images/drawer.png)
+
 
 ### Footer
-Similar to the nav bar the footer appears on each page and has a sticky effect. The footer contains links to the site's social media pages and has a light/dark mode button so users can choose which way to view the site. 
-![Footer]()
+Similar to the nav bar the footer appears on each page and has a sticky effect. The footer contains links to the site's social media and info pages. .
+![Footer](static/images/footer.png)
 
+### Home
+The home page where the user is first directed to contains links to start shopping and find out more about the site along with cards offering more info and buttons to browse products. The bottom also hosts a subscribe to our mailing list and 5 a side info box. 
+![Home](static/images/home.png)
+![Bottom of Home](static/images/bottomhome.png)
 
+### Profile
+The profile page is only access if a user is logged in. It contains the users past orders and their personal info which they can update and use in the future.
+![Profile](static/images/profile.png)
+![Order History](static/images/orderhistory.png)
 
+### Products
+The products page displays the sites products and allows user to categorize and sort them in various different ways using the buttons at the top of the page.
+![Products](static/images/products.png)
+
+### Product Detail
+The products details page is accessed when the user clicks on a product. If the user is signed in they can save the item to their wishlist. If the site admin is signed in they can edit the products info or even delete it using the buttons provided. 
+![Product Detail](static/images/productdetail.png)
+
+### Saved Products
+The saved products page displays the user's saved products and allows user to delete them if they wish. 
+![Saved Products](static/images/saveproduct.png)
+
+### Add a Product
+The add product view is only accessible for the site admin via the nav bar. 
+![Add Product](static/images/adddproduct.png)
 
 
 # Technology Used 
