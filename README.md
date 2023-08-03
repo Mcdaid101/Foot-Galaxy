@@ -363,12 +363,14 @@ The 404 renders if user gets a 404 error.
 
 
 <br>
-Grandtotal not appearing on the order confirmation message after checkout. 
+Grandtotal not appearing on the order confirmation message after checkout. strange bug as it appears in the checkout and bag pages, will get to the bottom of it in the future. More torublshooting needed as this is a big problem for shoppers who will want to be reminded of what they paid. 
 
 <br>
-After uploading my media files to AWS they still failed to render on the live site. 
+After uploading my media files to AWS they still failed to render on the live site, the directory that the images were in were wrong, placing the images in the correct directory quickly fixed this. 
 
 <br>
+
+![Terminal Bugs ](static/images/terminal%20bugs.png)
 
 # Testing and validation
 
@@ -381,6 +383,7 @@ I have manually tested this project by doing the following:
 * Tested each user story to make sure each one passes. 
 
 W3C validations
+* The w3c HTML validators pulled up alot of issues to do with django syntax, any that were not django I quickly corrected. 
 ![HTML]()
 ![CSS]()
 
