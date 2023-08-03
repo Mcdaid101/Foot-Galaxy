@@ -144,7 +144,7 @@ I sketched this chart out at the beginning of development, the future feature nu
 The colour scheme of the website is a simple white with flashes of red in the background, easy on the eye and stylish and modern. When the site is viewed on a device on dark mode, the colour scheme automatically switches from white to black, along with the font from black to white. This is a feature of tailwind's css. 
 
 ### Dark mode contrast
-![Ligh mode](static/images/lightmode1.png)
+![Light mode](static/images/lightmode1.png)
 ![Dark mode](static/images/darkmode1.png)
 ![Light mode](static/images/lightmode2.png)
 ![Dark mode](static/images/dark%20mode2.png)
@@ -152,8 +152,33 @@ The colour scheme of the website is a simple white with flashes of red in the ba
 ### Font 
 The font for this site is the generic arial sans serif, a classic font that works well on all sites. I observed it was used across most modern websites and e commerce stores and implemented it here also. 
 
-## Features
+# Features
 <br>
+
+## User stories by number for reference. 
+ 1. As a shopper I want to view products the site is offering.
+ 2. As a shopper I want to be able to view the info on a product such as its name, price and size.
+ 3. As a shopper I want to be able to apply different filters to products to filter and view them by price, in alphabetical order etc.
+ 4. As the site admin I want to be able to edit pricing, images and description.
+ 5. As the site admin I want to be able to add new products for sale and delete products if they are no longer being sold.
+ 6. As a shopper I want to be able to view a FAQ section for any frequently asked questions.
+ 7. As a shopper I want to be able to add products to my basket and view them before proceeding to the checkout.
+ 8. As a shopper I want to be able to remove items from my basket
+ 9. As a shopper I want to view my order details before I checkout.
+ 10. As a shopper I want to be able to enter payment info quickly and easily and save it for the future.
+ 11. As the site admin I want to be able to view orders made by customers to ship them as soon as possible.
+ 12.  As a shopper I want to be able to create an account to be able to interact with the site and feel a part of it.
+ 13. As a shopper I want to be able to log in and out of my account on the site.
+ 14. As a shopper I want to be able to view my past orders on my profile
+ 15. As a shopper I want to be able to save items to my account to show I like them and would maybe like to purchase them in the future.
+ 16. As a shopper I want to receive a confirmation email when signing up.
+ 17. As a site owner I want to be able to add, update and delete products from the main site
+ 18. As a shopper I want to know the location of the site’s store so I can shop there in person.
+ 19. As a shopper I want to be able to leave a review on the site’s services.
+ 20. As a shopper I want to be able to recover my password if I have forgotten it.
+ 21. As a shopper I want to receive regular news on the site and new products/plans via email.
+ 22. As the site admin I want to create a mailing list for subscribers to the site’s newsletters.
+ 23. As a shopper I want to be able to access the site’s social media to keep up to date with new plans and products.
 
 ### Nav bar
 To navigate the site Users use the nav bar at the top of each page.
@@ -161,61 +186,143 @@ The nav contains a search bar and links to shop and access the users profile alo
 ![Nav bar](static/images/nav.png)
 ![Drawer](static/images/drawer.png)
 
+User Stories covered: 
+13, 17
+<br>
 
 ### Footer
 Similar to the nav bar the footer appears on each page and has a sticky effect. The footer contains links to the site's social media and info pages. .
 ![Footer](static/images/footer.png)
 
+User Stories covered: 
+18, 23. 
+<br>
+
 ### Home
 The home page where the user is first directed to contains links to start shopping and find out more about the site along with cards offering more info and buttons to browse products. The bottom also hosts a subscribe to our mailing list and 5 a side info box. 
 ![Home](static/images/home.png)
 ![Bottom of Home](static/images/bottomhome.png)
+User Stories covered: 
+12, 18, 19, 20, 22. 
+<br>
 
 ### Profile
 The profile page is only access if a user is logged in. It contains the users past orders and their personal info which they can update and use in the future.
 ![Profile](static/images/profile.png)
 ![Order History](static/images/orderhistory.png)
 
+User Stories covered: 
+12, 14, 13. 
+<br>
+
 ### Products
 The products page displays the sites products and allows user to categorize and sort them in various different ways using the buttons at the top of the page.
 ![Products](static/images/products.png)
+
+User Stories covered: 
+1, 2, 3. 
+<br>
 
 ### Product Detail
 The products details page is accessed when the user clicks on a product. If the user is signed in they can save the item to their wishlist. If the site admin is signed in they can edit the products info or even delete it using the buttons provided. 
 ![Product Detail](static/images/productdetail.png)
 
+User Stories covered: 
+1, 2, 3, 4, 5. 
+<br>
+
 ### Saved Products
 The saved products page displays the user's saved products and allows user to delete them if they wish. 
 ![Saved Products](static/images/saveproduct.png)
+
+User Stories covered: 
+ 15.
+<br>
 
 ### Add a Product
 The add product view is only accessible for the site admin via the nav bar. 
 ![Add Product](static/images/adddproduct.png)
 
+User Stories covered: 
+4, 17. 
+<br>
+
 ### Edit a Product
 The edit product view is only accessible for the site admin via the nav bar. 
 ![Edit Product](static/images/editproduct.png)
+
+User Stories covered: 
+4, 5 . 
+<br>
 
 ### Bag
 The site bag renders what the user has added to it and allows them to then proceed to checkout and purchase them. Users can also remove items from their bag and view details on their products. 
 ![Bag](static/images/bag.png)
 
+User Stories covered: 
+7, 8, 9.
+<br>
+
 ### Checkout
 The checkout page shows again what items the user is purchasing and it's info and a payment form. The user can save their info if they are logged in. A stripe API card payment form is located at the bottom of the page along with a secure checkout button. 
 ![Checkout](static/images/checkout.png)
+
+User Stories covered: 
+9, 10,. 
+<br>
 
 ### Checkout Success
 The checkout success page is rendered if the user successfully makes a payment. Once their payment goes through they will be met with this screen and given an order number. The user can then find this order in their profile in the previous orders section if logged in. 
 ![Checkout Success](static/images/orderhistory.png)
 ![Checkout Success](static/images/checkoutsuccess.png)
 
+User Stories covered: 
+14. 
+<br>
+
+### Reviews
+The reviews page allows users to submit reviews on the site. 
+![Reviews](static/images/reviews.png)
+
+User Stories covered: 
+19 .
+<br>
+
 ### About
 The about page informs the user about the history of the company and on store location. 
 ![About](static/images/about.png)
 
+User Stories covered: 
+18, 12.
+<br>
+
 ### FAQS
 The FAQS page answers any common questions about the site and provides a returns policy. 
 ![FAQS](static/images/faqs.png)
+
+User Stories covered: 
+16, 18.
+<br>
+
+### Signup 
+The sign up page lets users sign up to the site.
+![Sign up](static/images/signup.png)
+
+User Stories covered: 
+12, 16. 
+<br>
+
+### Signin 
+The sign in page lets users sign in to the site and gives them the option to reset their password. 
+![Sign in](static/images/signin.png)
+
+User Stories covered: 
+20, 13.
+<br>
+
+### 404
+The 404 renders if user gets a 404 error. 
+![404](static/images/404.png)
 
 # Technology Used 
 <br>
