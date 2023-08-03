@@ -389,8 +389,9 @@ Pep8
 ![Python]()
 
 Lighthouse testing
-* At first my test results came up quite poor but after switching to an incognito window on chrome and downsizing the main hero image on the home page the site got a high score as seen in the images below. All pages got a similar result.
- ![Test]()
+* The lighthouse testing for the site did not score the best due to the large storage size of the images and other features, this is something to work on. 
+ ![Lighthouse test mobile](static/images/lighthouse-mobile.png)
+ ![Lighthouse test desktop](static/images/lighthousedesktop.png)
 
 <br>
 
@@ -400,6 +401,8 @@ Lighthouse testing
 ## Creating this project
 This project was created by navigating to the Code Institute's Gitpod student template and clicking the 'use this template' button. I then inputted the repository name "Foot Galaxy" and included all branches. With the repository now created, I used the browser version of Vs Code to create the project. 
 <br>
+
+
 
 I used the following commands throughout this project:
 * Git add . - This added my file to the staging area to be committed
@@ -479,6 +482,7 @@ web: gunicorn autoclassic.wsgi
 * Click on policies and create policy THEN click on the JSON tab and import a pre-built Amazon policy called AmazonS3FullAccess.
 * Click review policy and then create policy go to groups then add permission and attach policy and then add user. 
 * Add user to group and download the CSV and finally add your code into settings.py.
+
 
 
 # Credits
