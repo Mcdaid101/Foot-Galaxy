@@ -11,6 +11,9 @@ from django import template
 
 # Create your views here.
 def all_products(request):
+    """ 
+    all products view
+    """
     products = Product.objects.all()
     query = None
     categories = None

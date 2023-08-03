@@ -6,6 +6,9 @@ from .models import Review
 
 
 def reviews(request):
+    """
+    renders reviews
+    """
     reviews = Review.objects.all()
 
     if request.method == 'POST':

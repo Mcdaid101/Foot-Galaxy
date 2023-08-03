@@ -363,10 +363,10 @@ The 404 renders if user gets a 404 error.
 
 
 <br>
-
+Grandtotal not appearing on the order confirmation message after checkout. 
 
 <br>
-
+After uploading my media files to AWS they still failed to render on the live site. 
 
 <br>
 
@@ -409,6 +409,7 @@ I used the following commands throughout this project:
 * python3 manage.py runserver - This ran my code in the terminal
 * python3 manage.py makemigrations - This made my migrations
 * python3 manage.py migrate - This migrated my changes to my databases
+* pip3 freeze > requirements.txt.
 
 ## Heroku
 This website is deployed on Heroku
@@ -449,21 +450,6 @@ This website is deployed on Heroku
          
 * Inside INSTALLED_APPS I added the necessary apps
 
-* For the database I replaced it with the following code
-
-        DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-        }
-        
-* For the static files I replaced it with the following code to conect to Cloudinary
-
-      STATIC_URL = '/static/'
-      STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
-      STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-      STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-      MEDIA_URL = '/media/'
-      DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
       
 * Create a Procfile and add the following text
 
@@ -481,12 +467,9 @@ web: gunicorn autoclassic.wsgi
 <br> 
 
 # Credits
-* W3schools provided me with the code for my scroll to top of page function and my dark/light mode button. 
-
-## Media 
-* Site's posts feature image if unprovided: [here](https://www.pexels.com/photo/retro-tv-set-on-concrete-surface-5721869/)
-* Posts feature image if unprovided: [here](https://images.pexels.com/photos/10599961/pexels-photo-10599961.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
-* Home page hero is from scontent on facebook image is [here](https://scontent-lcy1-1.xx.fbcdn.net/v/t39.30808-6/311134067_416071014039021_806491811075822809_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=e3f864&_nc_ohc=S21fvKd8L4YAX_OWoXn&_nc_ht=scontent-lcy1-1.xx&oh=00_AfA04p9E2-rNTd0Mg8B7RBirtWGhH-zMiavymSuL7Ks3zA&oe=646BFA28)
+* All product images and card images are from [here](https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwjG59jUhMCAAxWGy-0KHV87CvgYABAAGgJkZw&gclid=Cj0KCQjwoK2mBhDzARIsADGbjeqZQ5sDuwPe3WwxJyztX1Lgeqx3KhAb4TyYPrFfIomSszBEVcB3C6caAiD0EALw_wcB&ohost=www.google.com&cid=CAESbeD2rRJW_1JzE6CvFKfczk2Y0Q_XA21_NnjJhELquTq1IkCmXCd2XbIRSVHiPbJxSWAscDfZkByW8weMJyO1vMtU-0__FLD0TSQjEX5x9gIYbFJ15IReP4QAVgZmQsESZOTK3M8Zt5pA51RBH-8&sig=AOD64_09mV_jjUQU6dPDMh6zZPKs0rSwCQ&q&adurl&ved=2ahUKEwjH5tHUhMCAAxVWTkEAHdmsBsgQ0Qx6BAgHEAE), classic football shirts.com.
+* W3schools provided me with the code for my scroll to top of page function and my dark/light mode button.
+* Code for the bag and checkout views are taken from the code institute's Boutique Ado project.
 
 ## Acknowledgements 
 * I would like to thank my mentor Ronan Mc Clelland for his help and guidance while I built this project.
