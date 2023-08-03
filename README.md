@@ -436,7 +436,7 @@ This website is deployed on Heroku
 * I created a new app with the project name
 * Select region as Europe
 * Open the Resources section and select Heroku Postgres
-* Open the Settings section and select Config VARS, then add the keys needed to start development DATABASE_URL/SECRET_KEY/CLOUDINARY_URL, with Config VARS you add: PORT: 8000 + DISABLE_COLLECTSTATIC: 1;
+* Open the Settings section and select Config VARS, then add the necessary keys to your project. 
 
 <p> 3. Set up Django settings.py and necessary folders/files </p>
 
@@ -455,16 +455,31 @@ This website is deployed on Heroku
 
 web: gunicorn autoclassic.wsgi
 
-<h3> 4. Final deployment. </h3>
+<p> 4. Elephant SQL</p>
 
-* In settings.py set the DEBUG = False;
-* In Heroku I went back to Settings > Config VARS and removed the DISABLE_COLLECTSTATIC var;
-* In Heroku I navigated to the Deploy section;
-* I clicked to connect to GitHub and searched for my repository for this project;
-* I clicked on manual deploy to build the App;
-* When finished, I clicked the View button, which redirected me to the live site.
+* Login to site 
+* Click 'Create New Instance' then select a region.
+* Confirm new instance by clicking 'Create Instance'.
+* Click the instance you created, copy the URL. 
+* Paste it into your DATABASE_URL env.py file.
 
-<br> 
+<p>5. Stripe </p>
+
+* Sign in to stripe.
+* Go to 'Developers' then 'API Keys' to view public and secret key.
+* Copy and paste your STRIPE_PUCLIC_KEY AND STRIPE_SECERET_KEY into heroku convig vars.
+
+<p> 6. Amazon web services AWS </p>
+
+* Log in to AWS
+* Create bucket in s3 select a Region turn off block all Public access go to the static website hosting' and click edit.
+* In permissions click edit on CORS then edit bucket policy and generate and set configuration bucket policy. 
+* On access control list set list object permission for everyone.
+* Open IAM application and set up a user group.
+* Click on policies and create policy THEN click on the JSON tab and import a pre-built Amazon policy called AmazonS3FullAccess.
+* Click review policy and then create policy go to groups then add permission and attach policy and then add user. 
+* Add user to group and download the CSV and finally add your code into settings.py.
+
 
 # Credits
 * All product images and card images are from [here](https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwjG59jUhMCAAxWGy-0KHV87CvgYABAAGgJkZw&gclid=Cj0KCQjwoK2mBhDzARIsADGbjeqZQ5sDuwPe3WwxJyztX1Lgeqx3KhAb4TyYPrFfIomSszBEVcB3C6caAiD0EALw_wcB&ohost=www.google.com&cid=CAESbeD2rRJW_1JzE6CvFKfczk2Y0Q_XA21_NnjJhELquTq1IkCmXCd2XbIRSVHiPbJxSWAscDfZkByW8weMJyO1vMtU-0__FLD0TSQjEX5x9gIYbFJ15IReP4QAVgZmQsESZOTK3M8Zt5pA51RBH-8&sig=AOD64_09mV_jjUQU6dPDMh6zZPKs0rSwCQ&q&adurl&ved=2ahUKEwjH5tHUhMCAAxVWTkEAHdmsBsgQ0Qx6BAgHEAE), classic football shirts.com.
