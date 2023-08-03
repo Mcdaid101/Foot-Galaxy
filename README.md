@@ -11,7 +11,9 @@ Card number: 4242 4242 4242 4242. Expiry: 42/42. CVC: 424. PostCode: 42424.
 
 ####
 
-![Website Mock Up]()
+![Home Page Desktop](static/images/homeScreenshot.png)
+&nbsp;
+![Home Page Mobile](static/images/mobile%20screenshot.png)
 &nbsp;
 
 # Purpose
@@ -30,6 +32,8 @@ I built this website from scratch using the Django framework and the knowledge I
 ## Site Aims
 
 * Provide football lovers with a store to purchase classic football shirts.
+* Get as many users signed up as possible. 
+* Create a good relationship with customers and keep them returning. 
 
 # Design 
 
@@ -83,35 +87,17 @@ The agile methodology was implemented in the design of this project. The project
 <details><summary>Desktop Wireframes</summary>
 <p>
 
-![Home page]()
+![Home page](static/images/home%20wireframe.png)
 
-![About page]()
+![Products page](static/images/products%20wireframe.png)
 
-![Register page]()
+![Profile page](static/images/profile%20wireframe%20.png)
 
-![Login page]()
+![Product Detail page](static/images/product%20detail%20wireframe.png)
 
-![Category page]()
+![Bag](static/images/bag%20wireframe.png)
 
-![Your reviews page]()
-
-</p>
-</details>
-
-<details><summary>Mobile and Tablet Wireframes</summary>
-<p>
-
-![Home page]()
-
-![About page]()
-
-![Register page]()
-
-![Login page]()
-
-![Category page]()
-
-![Your reviews page]()
+![Checkout](static/images/checkout%20wireframe.png)
 
 </p>
 </details>
@@ -119,7 +105,7 @@ The agile methodology was implemented in the design of this project. The project
 <details><summary>Database Schema</summary>
 <p>
 
-![Database]()
+![Database](static/images/databaseschema.png)
 
 </p>
 </details>
@@ -183,18 +169,18 @@ Similar to the nav bar the footer appears on each page and has a sticky effect. 
 * Crispy tailwind - styled the sites forms 
 * Django storages - helped with file storages 
 * Django browser reload - automatic browser reloads in development 
+* Stripe API
+* Pillow
 
 # Bugs 
 
-* Was really struggling to make the user's review that were posted to be accessible in the post detail form. Using the form.cleaned_data[] method in "form.instance.slug = slugify(form.cleaned_data['title'])" in my add post view helped with this and fixed the bug. 
+
 <br>
 
-* When doing lighthouse testing my site was scoring very low, took me a while to realize some of the chrome add on's I was using such as adblocker were impacting it's performance. Switching to an incognito tab quickly got the score up and made testing the page easier. 
+
 <br>
 
-* When I deployed the site, none of my css or images were loading correctly. Installing whitespace fixed this. 
 
-* No bugs remained after this. 
 <br>
 
 # Testing and validation
