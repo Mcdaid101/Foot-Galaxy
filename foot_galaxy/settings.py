@@ -27,9 +27,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = True #'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['localhost', 'foot-galaxy-e4d24e6240cb.herokuapp.com', '8000-mcdaid101-footgalaxy-yuozmm61bed.ws-eu102.gitpod.io']
+ALLOWED_HOSTS = ['localhost', 'foot-galaxy-e4d24e6240cb.herokuapp.com', '8000-mcdaid101-footgalaxy-yuozmm61bed.ws-eu104.gitpod.io']
 
 
 # Application definition
@@ -51,8 +51,7 @@ INSTALLED_APPS = [
     'info',
     'checkout',
     'profiles',
-    'reviews',
-    
+    'reviews',   
     # Other
     'crispy_forms',
     'crispy_tailwind',
