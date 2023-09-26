@@ -1,6 +1,6 @@
 # Foot Galaxy
 
-Telephile is an E-commerce store for a multinational business that sells classic and modern football jerseys to fans and collectors around the world. Shoppers can sign up and create an account, browse the store's jerseys and make purchases through the checkout. Shoppers gain a user profile when signing up where they can view past orders and save their personal info, the site also lets them review the business and save items to their wishlist. 
+Foot Galaxy is an E-commerce store for a multinational business that sells classic and modern football jerseys to fans and collectors around the world. Shoppers can sign up and create an account, browse the store's jerseys and make purchases through the checkout. Shoppers gain a user profile when signing up where they can view past orders and save their personal info, the site also lets them review the business and save items to their wishlist. 
 
 You can find the live site [Here](https://foot-galaxy-e4d24e6240cb.herokuapp.com/).
 
